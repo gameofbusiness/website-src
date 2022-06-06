@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+ 	<head>
+ 		<!--Define charset-->
+ 		<meta charset="utf-8"/>
+
+ 		<!--Provide a HTTP header for the info/value of the content attribute.-->
+ 		<meta http-equiv="content-type" content="text/html"/>
+
+ 		<!--
+			Give browser instructions on how to control the page's dimensions and scaling.
+			Set the width of the page to follow the screen-width of the device.
+			Set the initial zoom level when the page is first loaded by the browser.
+		-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+ 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+ 		<!--Define keywords for search engines.-->
+		<meta name="Keywords" content="Sun Tzu Art of War game, Art of War, Sun Tzu, Sun Tzu Art of War, business strategy, strategy game, Game of Business, play"/>
+
+		<!--Define a description of the web page.-->
+		<meta name="Description" content="SUN TZU ART OF WAR GAME for Business Strategy — Game of Business transforms Sun Tzu Art of War to thoroughly prepare for the dangers of business. "/>
+
+		<!--Define the author of the web page.-->
+		<meta name="author" content="Sun Tzu"/>
+
+	  	<!-- Facebook Open Graph allows defining properties to create rich text: http://ogp.me/-->
+		<meta property="og:site_name" content="Game of Business"/> <!-- Show site name as root of navigation path -->
+		<meta property="og:title" content="Sun Tzu Art of War Game for Business Strategy"/>
+		<meta property="og:description" content="SUN TZU ART OF WAR GAME for Business Strategy — Game of Business transforms Sun Tzu Art of War to thoroughly prepare for the dangers of business. "/>
+		<meta property="og:image" content="https://www.gameofbusiness.org/images/GB-logo.jpg"/>
+
+	  	<title>Sun Tzu Art of War Game for Business Strategy</title>
+
+	  	<link rel="canonical" href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html"/>
+
+	  	<link rel="stylesheet" href="https://www.gameofbusiness.org/css/gob.css"/>
+
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+		<script src="https://www.gameofbusiness.org/scripts/jquery-2.1.4.min.js"></script>
+		<script src="https://www.gameofbusiness.org/scripts/bootstrap.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<!-- Start Header -->
+		<div class="gob-bar gob-theme gob-card-2 gob-wide gob-topnav" style="height:44px;">
+			<a id="tabbtn-menu" title="Open|Close Menu" class="gob-bar-item gob-button gob-hover-white gob-fa gob-fa-menu" href="javascript:void(0)" onclick="gob_open_menu('menu-accordion', this)" style="display:inline-block;">
+				<!-- <i class="fa">&#xf0c9;</i> --> <!--Instead of class='fas fa-bars', use Unicode for "font awesome" bars when menu collapses because window shrunk: &#xf0c9;-->
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</a>
+			<a id="tabbtn-logo" href='https://www.gameofbusiness.org' class="gob-bar-item gob-button gob-hover-white"><strong>Game of Business</strong></a>
+			<a id="tabbtn-buy" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/book-pdf.php" title="Sun Tzu Art of War Business Strategy PDF">Buy E-Book</a>
+			<a id="tabbtn-summary" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/the-art-of-war/summary.html" title="Game of Business and the Art of War Summary">See Summary</a>
+			<a id="tabbtn-game" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" title="Game of Business and Sun Tzu Art of War Game">Play Game</a>
+			<a id="tabbtn-pdf" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/the-art-of-war/pdf.html" title="The Art of War PDF"><em>The Art of War</em> PDF</a>
+			<a id="tabbtn-level" class="gob-bar-item gob-button gob-hover-white gob-display-right gob-barex" onclick="loadUserData()" href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" title="Game of Business and Sun Tzu Art of War Game">Level
+				<span id="level">0</span>
+			</a>
+		</div>
+
+		<div id='menu-accordion' class="gob-card-2 gob-light-grey gob-center" style="display:none;">
+			<a title="Close Menu" href="javascript:void(0)" onclick="gob_close('menu-accordion')" class="gob-button gob-xlarge gob-right">&times;</a><br/>
+			<div class="gob-container" style="padding-top:0;padding-bottom:32px;">
+				<a href="https://www.gameofbusiness.org/book-pdf.php" class="gob-button gob-block gob-large gob-wide" title="Sun Tzu Art of War Business Strategy PDF">Buy E-Book</a>
+				<a href="https://www.gameofbusiness.org/the-art-of-war/summary.html" class="gob-button gob-block gob-large gob-wide" title="Game of Business and the Art of War Summary">See Summary</a>
+				<a href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" class="gob-button gob-block gob-large gob-wide" title="Game of Business and Sun Tzu Art of War Game">Play Game</a>
+				<a href="https://www.gameofbusiness.org/the-art-of-war/pdf.html" class="gob-button gob-block gob-large gob-wide" title="The Art of War PDF"><em>The Art of War</em> PDF</a>
+			</div>
+		</div>
+		<!-- End Header -->
+
+		<div class="gob-main gob-main-content">
+
+			<article>
+
+				<header>
+					<h1><strong>Sun Tzu Art of War Game for Business Strategy</strong></h1>
+				</header>
+
+				<hr/>
+
+				<!-- game user interface-->
+				<section>
+					<h2><strong>Play Game of Business to Determine the Likelihood of Your Company's Success</strong></h2> <!--Formerly to Ensure Your Company Will Succeed-->
+
+					<p>By means of these Seven Considerations I can forecast victory or defeat. </p>
+
+					<p>Answer the following questions to determine your business level: </p>
+
+					<div class="gob-row gob-margin-bottom gob-col l12 gob-center" style="padding:3%;">
+
+						<!--the form-->
+						<div class="gob-light-grey gob-card-2" style="padding:16px;border-radius:10px;">
+
+							<div class="gob-row">
+								<!--form header-->
+								<h2 class="gob-col l12">
+
+									<span class="gob-left"><a href="https://www.gameofbusiness.org/the-art-of-war/summary.html" style="text-decoration:none" title="The Art of War Summary">Moral Influence</a></span>
+
+									<span class="gob-right">
+										<output id="miScore" name="miScore" for="ss sf u" form="miForm" style="font:inherit;">0</output>%
+									</span>
+								</h2>
+							</div>
+
+							<!--form inputs-->
+							<div class="gob-sample gob-border-red" style="border-radius:10px">
+								<form oninput="miScore.value=setScore([parseInt(ss.value), parseInt(sf.value), 100-parseInt(u.value)]);miData.value=miScore.value;setLevel([parseInt(miScore.value), parseInt(nScore.value), parseInt(dScore.value), parseInt(lScore.value), parseInt(mScore.value)])"
+									id="miForm">
+									<div class="gob-padding">
+										<p>Are you and your teammates prepared to succeed?</p>
+
+										<input class="gob-range" type="range" id="ss" name="sharedSuccess" value="0"></input>
+
+										<div class="gob-scale">
+											<span class="gob-init-value">0</span><span class="gob-final-value">100%</span>
+										</div>
+										<div class="gob-scale">
+											<span class="gob-init-value">(unprepared)</span><span class="gob-final-value">(prepared)</span>
+										</div>
+									</div>
+
+									<hr/>
+
+									<div class="gob-padding">
+										<p>Are you and your teammates prepared to fail?</p>
+
+										<input class="gob-range" type="range" id="sf" name="sharedFailure" value="0"></input>
+
+										<div class="gob-scale">
+											<span class="gob-init-value">0</span><span class="gob-final-value">100%</span>
+										</div>
+										<div class="gob-scale">
+											<span class="gob-init-value">(unprepared)</span><span class="gob-final-value">(prepared)</span>
+										</div>
+									</div>
+
+									<hr/>
+
+									<div class="gob-padding">
+										<p>Are you and your teammates afraid of danger?</p>
+
+										<input class="gob-range" type="range" id="u" name="undismayed" value="100" class="gob-center"></input>
+
+										<div class="gob-scale">
+											<span class="gob-init-value">0</span><span class="gob-final-value">100%</span>
+										</div>
+										<div class="gob-scale">
+											<span class="gob-init-value">(fearless)</span><span class="gob-final-value">(fearful)</span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="gob-row gob-margin-bottom">
+
+						<div class="gob-col l12 gob-center" style="padding:3%">
+
+							<div class="gob-light-grey gob-card-2" style="padding:16px;border-radius:10px">
+
+								<div class="gob-row">
+									<h2 class="gob-col l12">
+										<span class="gob-left"><a href="https://www.gameofbusiness.org/the-art-of-war/summary.html" style="text-decoration:none" title="The Art of War Summary">Nature</a></span>
+										<span class="gob-right"><output id="nScore" name="nScore" for="en" form="nForm" >0</output>%</span>
+									</h2>
+								</div>
+
+								<div class="gob-sample gob-border-red" style="border-radius:10px">
+									<form oninput="nScore.value=setScore([parseInt(en.value)]);nData.value=nScore.value;setLevel([parseInt(miScore.value), parseInt(nScore.value), parseInt(dScore.value), parseInt(lScore.value), parseInt(mScore.value)])"
+										id="nForm">
+										<div class="gob-padding">
+											<p>Are advantages of Nature harmonized?</p>
+
+											<input class="gob-range" type="range" id="en" name="exploitedNature" value="0"></input>
+
+											<div class="gob-scale">
+												<span class="gob-init-value">0</span><span class="gob-final-value">100%</span>
+											</div>
+											<div class="gob-scale">
+												<span class="gob-init-value">(none)</span><span class="gob-final-value">(all)</span>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="gob-row gob-margin-bottom">
+
+						<div class="gob-col l12 gob-center" style="padding:3%">
+							<div class="gob-light-grey gob-card-2" style="padding:16px;border-radius:10px">
+
+								<div class="gob-row">
+									<h2 class="gob-col l12">
+										<span class="gob-left"><a href="https://www.gameofbusiness.org/the-art-of-war/summary.html" style="text-decoration:none" title="The Art of War Summary">Domain</a></span>
+										<span class="gob-right"><output id="dScore" name="dScore" for="ed" form="dForm" >0</output>%</span>
+									</h2>
+								</div>
+
+								<div class="gob-sample gob-border-red" style="border-radius:10px">
+									<form oninput="dScore.value=setScore([parseInt(ed.value)]);dData.value=dScore.value;setLevel([parseInt(miScore.value), parseInt(nScore.value), parseInt(dScore.value), parseInt(lScore.value), parseInt(mScore.value)])" id="dForm">
+										<div class="gob-padding">
+											<p>Are advantages of Domain harmonized?</p>
+
+											<input class="gob-range" type="range" id="ed" name="exploitedDomain" value="0"></input>
+
+											<div class="gob-scale">
+												<span class="gob-init-value">0</span><span class="gob-final-value">100%</span>
+											</div>
+											<div class="gob-scale">
+												<span class="gob-init-value">(none)</span><span class="gob-final-value">(all)</span>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="gob-row gob-margin-bottom">
+
+						<div class="gob-col l12 gob-center" style="padding:3%">
+							<div class="gob-light-grey gob-card-2" style="padding:16px;border-radius:10px">
+
+								<div class="gob-row">
+									<h2 class="gob-col l12">
+										<span class="gob-left"><a href="https://www.gameofbusiness.org/the-art-of-war/summary.html" style="text-decoration:none" title="The Art of War Summary">Leadership</a></span>
+										<span class="gob-right"><output id="lScore" name="lScore" for="la" form="lForm" >0</output>%</span>
+									</h2>
+								</div>
+
+								<div class="gob-sample gob-border-red" style="border-radius:10px">
+									<form oninput="lScore.value=setScore([parseInt(la.value)]);lData.value=lScore.value;setLevel([parseInt(miScore.value), parseInt(nScore.value), parseInt(dScore.value), parseInt(lScore.value), parseInt(mScore.value)])" id="lForm">
+										<div class="gob-padding">
+											<p>Do your leaders have ability?</p>
+
+											<input class="gob-range" type="range" id="la" name="leaderAbility" value="0"></input>
+
+											<div class="gob-scale">
+												<span class="gob-init-value">0</span><span class="gob-final-value">100%</span>
+											</div>
+											<div class="gob-scale">
+												<span class="gob-init-value">(none)</span><span class="gob-final-value">(all)</span>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="gob-row gob-margin-bottom">
+
+						<div class="gob-col l12 gob-center" style="padding:3%">
+							<div class="gob-light-grey gob-card-2" style="padding:16px;border-radius:10px">
+
+								<div class="gob-row">
+									<h2 class="gob-col l12">
+										<span class="gob-left"><a href="https://www.gameofbusiness.org/the-art-of-war/summary.html" style="text-decoration:none" title="The Art of War Summary">Method</a></span>
+										<span class="gob-right"><output id="mScore" name="mScore" for="sw ect rpc de" form="mForm" >0</output>%</span>
+									</h2>
+								</div>
+
+								<div class="gob-sample gob-border-red" style="border-radius:10px">
+									<form oninput="mScore.value=setScore([parseInt(sw.value), parseInt(ect.value), parseInt(rpc.value), parseInt(de.value)]);mData.value=mScore.value;setLevel([parseInt(miScore.value), parseInt(nScore.value), parseInt(dScore.value), parseInt(lScore.value), parseInt(mScore.value)])"
+										id="mForm">
+										<div class="gob-padding">
+											<p>Is your company strong?</p>
+
+											<input class="gob-range" type="range" id="sw" name="strongWorkforce" value="0"></input>
+
+											<div class="gob-scale">
+												<span class="gob-init-value">0</span><span class="gob-final-value">100%</span>
+											</div>
+											<div class="gob-scale">
+												<span class="gob-init-value">(weak)</span><span class="gob-final-value">(strong)</span>
+											</div>
+										</div>
+
+										<hr/>
+
+										<div class="gob-padding">
+											<p>Are associates and candidates highly trained?</p>
+
+											<input class="gob-range" type="range" id="ect" name="ecTrained" value="0"></input>
+
+											<div class="gob-scale">
+												<span class="gob-init-value">0</span><span class="gob-final-value">100%</span>
+											</div>
+											<div class="gob-scale">
+												<span class="gob-init-value">(none)</span><span class="gob-final-value">(all)</span>
+											</div>
+										</div>
+
+										<hr/>
+
+										<div class="gob-padding">
+											<p>Are rewards and punishments consistent?</p>
+
+											<input class="gob-range" type="range" id="rpc" name="rpConsistent" value="0"></input>
+
+											<div class="gob-scale">
+												<span class="gob-init-value">0</span><span class="gob-final-value">100%</span>
+											</div>
+											<div class="gob-scale">
+												<span class="gob-init-value">(none)</span><span class="gob-final-value">(all)</span>
+											</div>
+										</div>
+
+										<hr/>
+
+										<div class="gob-padding">
+											<p>Is discipline rigorously enforced?</p>
+
+											<input class="gob-range" type="range" id="de" name="disciplineEnforced" value="0"></input>
+
+											<div class="gob-scale">
+												<span class="gob-init-value">0</span><span class="gob-final-value">100%</span>
+											</div>
+											<div class="gob-scale">
+												<span class="gob-init-value">(not at all)</span><span class="gob-final-value">(absolutely)</span>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<hr/>
+
+				<section class="gob-margin-bottom">
+					<h2><strong>Recommended Next Steps</strong></h2> <!-- Feedback from the Mentor You Always Wished You Had / Custom Feedback / Skills to Improve -->
+
+					<table class="gob-table-all gob-xlarge" style="width:100%;border-radius:10px">
+						<tr>
+							<th style="width:50%">Factor</th>
+							<th style="text-align:right">Score (%)</th>
+						</tr>
+						<tr>
+							<td>Moral Influence</td>
+							<td style="text-align:right"><output id="miData" name="miData" for="ss sf u" form="miForm">0</output></td>
+						</tr>
+						<tr>
+							<td>Nature</td>
+							<td style="text-align:right"><output id="nData" name="nData" for="en" form="nForm">0</output></td>
+						</tr>
+						<tr>
+							<td>Domain</td>
+							<td style="text-align:right"><output id="dData" name="dData" for="ed" form="dForm">0</output></td>
+						</tr>
+						<tr>
+							<td>Leadership</td>
+							<td style="text-align:right"><output id="lData" name="lData" for="la" form="lForm">0</output></td>
+						</tr>
+						<tr>
+							<td>Method</td>
+							<td style="text-align:right"><output id="mData" name="mData" for="sw ect rpc de" form="mForm">0</output></td>
+						</tr>
+					</table>
+
+					<div class="gob-center gob-light-grey gob-card-2" style="padding:16px;border-radius:10px">
+						<h2>Business Level: Probability of Success</h2>
+						<div class="gob-sample gob-border-red gob-padding" style="border-radius:10px">
+							<p class="gob-xxlarge gob-margin"><span id="levelBarItem">0</span> / 100</p>
+						</div>
+
+						<h3>Earn 100% using the strategies in <a  href="https://www.gameofbusiness.org/book-pdf.php" title="Sun Tzu Art of War Business Strategy PDF">Game of Business</a> to increase the probability of your company's success.</h3>
+					</div>
+
+				</section>
+
+				<hr/>
+
+				<!-- game guide -->
+				<section>
+
+					<h2><strong>Getting Started Guide</strong></h2> <!-- Basic Guide / Instructions -->
+
+					<div class="gob-row gob-margin-bottom">
+
+						<div class="gob-row gob-margin-bottom gob-border gob-padding-xxlarge">
+							Get feedback on the most important factors of your business.
+							<div class="gob-principle">
+								1-2: The Game of Business is governed by Five Factors.
+							</div>
+						</div>
+						<div class="gob-row gob-margin-bottom gob-border gob-padding-xxlarge">
+							Determine the condition of your business. Save time and energy by simulating scenarios before implementing them.
+							<div class="gob-principle">
+								1-4: In your deliberations, evaluate the Seven Considerations to determine the business conditions.
+							</div>
+						</div>
+						<div class="gob-row gob-margin-bottom gob-border gob-padding-xxlarge">
+							Learn about your business.
+							<div class="gob-principle">
+								3-13.1: If you know your customers and know yourself, you need not fear the result of a hundred challenges.
+							</div>
+						</div>
+						<div class="gob-row gob-margin-bottom gob-border gob-padding-xxlarge">
+							Determine how your associates should proceed.
+							<div class="gob-principle">
+								6-6: Those leaders are skillful in progress whose associates know how to proceed; and they are skillful in defense whose opponents do not know what to pursue.
+							</div>
+						</div>
+						<div class="gob-row gob-margin-bottom gob-border gob-padding-xxlarge">
+							Manage your associates' strengths.
+							<div class="gob-principle">
+								6-8: You may advance and encounter no resistance, if you manage associates’ strengths.
+							</div>
+						</div>
+						<div class="gob-row gob-margin-bottom gob-border gob-padding-xxlarge">
+							Determine the challenges you must face.
+							<div class="gob-principle">
+								6-16: Numerical weakness comes from having to prepare against possible challenges; numerical strength, from compelling opponents to make these preparations against us.
+							</div>
+						</div>
+						<div class="gob-row gob-margin-bottom gob-border gob-padding-xxlarge">
+							Determine the place and time of future activities.
+							<div class="gob-principle">
+								6-17: If we know the place and time of future activities, we can plan adequately and be ready to advance.
+							</div>
+						</div>
+						<div class="gob-row gob-margin-bottom gob-border gob-padding-xxlarge">
+							Track your business' most important changes.
+							<div class="gob-principle">
+								6-30: Change is a constant factor.
+							</div>
+						</div>
+					</div>
+
+					<p>If you want to understand what really goes into leading your company to the top, so that you'll be prepared no matter what situation you're in, <a href="https://www.gameofbusiness.org/book-pdf.php" title="Sun Tzu Art of War Business Strategy PDF">see the complete Game of Business Guide</a>.</p>
+
+				</section>
+
+			</article>
+
+			<hr/>
+
+			<!-- Example Principles and Strategies -->
+			<section>
+				<div class="gob-row gob-example">
+					<div class="gob-col s12 m12 l6">
+						<h2><strong>10 Example Principles</strong></h2>
+						<ul class="gob-ul">
+							<li>The Game of Business is of vital importance to the Company; it is a matter of success and failure; it is a road to safety or ruin. Hence it must be investigated.</li>
+							<li>In accordance with favorable circumstances, one should modify one’s plans.</li>
+							<li>When you engage in actual struggling, if success is long in coming, then associates’ minds will grow dull and their ardor will be damped. If you focus solely on acquiring unadaptable customers, you will exhaust your strength.</li>
+							<li>The good businesspeople of old first put themselves beyond the possibility of failure, and then waited for an opportunity of acquiring customers.</li>
+							<li>Whoever is first in the field, and awaits the coming of opponents, will be fresh for challenges; whoever is second in the field, and must hasten to action, will arrive exhausted.</li>
+							<li>Through the principles of subtlety and secrecy, we learn to be invisible and inaudible; hence, we can control our fates.</li>
+							<li>All people can see the tactics whereby I succeed, but what none can see is the strategy out of which success is evolved.</li>
+							<li>Do not repeat the tactics that have gained you one success, but let your methods be regulated by the infinite variety of circumstances.</li>
+							<li>The principle on which to lead a company is to set up one standard of courage that all must reach.</li>
+							<li>If you are careful of your people, and occupy stable positions, the company will be free from disorder of every kind; this will result in success.</li>
+						</ul>
+
+						<a href="https://www.gameofbusiness.org/book-pdf.php" class="gob-button gob-theme gob-hover-red gob-hover-shadow" style="border-radius:10px" title="Principles | Game of Business">See More Principles ></a>
+					</div>
+					<div class="gob-col s12 m12 l6">
+						<h2><strong>10 Example Strategies</strong></h2>
+						<ul class="gob-ul">
+							<li>If associates are underestimating you, earn their confidence.</li>
+							<li>To benefit from natural advantages, we must use local guides.</li>
+							<li>In difficult situations, do not settle.</li>
+							<li>In central situations—those in which important paths intersect—join your allies.</li>
+							<li>If there is much uncertainty about an obstacle you wish to cross, causing inconsistencies to appear, resolve the inconsistencies before trying to overcome the obstacle.</li>
+							<li>If in training associates, instructions are habitually used, the company will be well-disciplined; if not, its discipline will be bad.</li>
+							<li>If you treat your associates with care, they will follow you through the most threatening dangers; if you regard them as your beloved children, they will support you until failure.</li>
+							<li>In difficult situations, keep steadily advancing.</li>
+							<li>In easy situations, see that there are close connections between all parts of your company.</li>
+							<li>No leaders should enter into business simply out of resentment, because vexation may be followed by content, but time can never be returned.</li>
+						</ul>
+
+						<a href="https://www.gameofbusiness.org/book-pdf.php" class="gob-button gob-theme gob-hover-red gob-hover-shadow" style="border-radius:10px" title="Strategies | Game of Business">See More Strategies ></a>
+					</div>
+				</div>
+			</section>
+
+			<hr/>
+
+			<!-- banner -->
+			<section>
+				<div class="gob-row gob-margin-bottom">
+					<div class="gob-border gob-padding gob-center">
+						<p>GAME OF BUSINESS TRANSFORMS <a href="https://www.gameofbusiness.org/the-art-of-war/pdf.html" title="The Art of War PDF"><em>SUN TZU ART OF WAR</em></a> TO PREPARE YOU FOR THE DANGERS OF BUSINESS. </p>
+						<div class="gob-row gob-margin-bottom">
+							<div class="gob-col s12 m6 l6">
+								<a href="https://www.gameofbusiness.org/book-pdf.php" class="gob-button gob-theme gob-hover-red gob-hover-shadow" style="border-radius:10px" title="Book | Game of Business">See <em>Game of Business</em> Book</a>
+							</div>
+							<div class="gob-col s12 m6 l6">
+								<a href="https://www.gameofbusiness.org/the-art-of-war/pdf.html" class="gob-button gob-theme gob-hover-red gob-hover-shadow" style="border-radius:10px" title="Book | Art of War">See <em>Art of War</em> Book</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<div id="contact-modal"></div>
+
+		</div> <!-- end main -->
+
+		<div id="footer"></div>
+
+		<script src="https://www.gameofbusiness.org/scripts/gb-sections.js"></script>
+		<script src="https://www.gameofbusiness.org/scripts/gb-display.js"></script>
+		<script src="https://www.gameofbusiness.org/scripts/gb-game.js"></script>
+
+	</body>
+</html>

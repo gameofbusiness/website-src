@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--Define charset.-->
+ 		<meta charset="utf-8"/>
+
+ 		<!--Provide a HTTP header for the info/value of the content attribute.-->
+ 		<meta http-equiv="content-type" content="text/html"/>
+
+ 		<!--
+			Give browser instructions on how to control the page's dimensions and scaling.
+			Set the width of the page to follow the screen-width of the device.
+			Set the initial zoom level when the page is first loaded by the browser.
+		-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<!--Define keywords for search engines.-->
+		<meta name="Keywords" content="Game of Business, Sun Tzu, Art of Business, Art of War in business, Sun Tzu, leadership training, business strategy, team training, strategy game, business book, strategize, military strategy, leadership book, Sun Tsu, Sun Tzu Art of War, business, consulting, business plans, finance, investing, venture capital, leadership, management, learning, training, strategy, game, ultimate guide"/>
+
+		<!--Define a description of the web page.-->
+		<meta name="description" content="GAME OF BUSINESS — Sun Tzu and the Art of Business — Game of Business can guide your business strategy, because it the most precise transformation of the Art of War for business. "/>
+
+		<!--Define the author of the web page.-->
+		<meta name="author" content="Sun Tzu"/>
+
+		<!-- Facebook Open Graph allows defining properties to create rich text: http://ogp.me/-->
+		<meta property="og:site_name" content="Game of Business"/> <!-- Show site name as root of navigation path -->
+		<meta property="og:title" content="Game of Business | Sun Tzu and the Art of Business"/>
+		<meta property="og:description" content="GAME OF BUSINESS — Sun Tzu and the Art of Business — Game of Business can guide your business strategy, because it the most precise transformation of the Art of War for business. "/>
+		<meta property="og:image" content="https://www.gameofbusiness.org/images/GB-logo.jpg"/>
+
+		<title>Game of Business | Sun Tzu and the Art of Business</title>
+
+		<link rel="stylesheet" href="https://www.gameofbusiness.org/css/gob.css"/>
+
+		<link rel="canonical" href="https://www.gameofbusiness.org/"/>
+
+		<!--<link rel="stylesheet" href="<?php bloginfo(stylesheet_url); echo '?' . filemtime( get_stylesheet_directory() . '/gob.css'); ?>" type="text/css" media="screen, projection" />-->
+
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+		<script src="https://www.gameofbusiness.org/scripts/jquery-2.1.4.min.js"></script>
+		<script src="https://www.gameofbusiness.org/scripts/bootstrap.min.js"></script>
+
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"url": "https://www.gameofbusiness.org/",
+			"name": "Game of Business",
+			"description": "If your goal is to start an excellent business or significantly increase earnings, Game of Business can help you. Game of Business uses the strategic principles from Sun Tzu Art of War to recommend a plan of action for your company. ",
+			"logo": "https://gameofbusiness.org/images/GB-logo.jpg",
+			"contactPoint":
+			{
+				"@type": "ContactPoint",
+				"telephone": "+1-516-967-6092",
+				"email": "support@gameofbusiness.org",
+				"contactType": "Customer Support",
+				"areaServed": "US",
+				"availableLanguage": "English"
+			}
+		}
+		</script>
+
+	</head>
+
+	<body>
+
+		<!-- Start Header -->
+		<div class="gob-bar gob-theme gob-card-2 gob-wide gob-topnav" style="height:44px;">
+			<a id="tabbtn-menu" title="Open|Close Menu" class="gob-bar-item gob-button gob-hover-white gob-fa gob-fa-menu" href="javascript:void(0)" onclick="gob_open_menu('menu-accordion', this)" style="display:inline-block;">
+				<!-- <i class="fa">&#xf0c9;</i> --> <!--Instead of class='fas fa-bars', use Unicode for "font awesome" bars when menu collapses because window shrunk: &#xf0c9;-->
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</a>
+			<a id="tabbtn-logo" href='https://www.gameofbusiness.org' class="gob-bar-item gob-button gob-hover-white"><strong>Game of Business</strong></a>
+			<a id="tabbtn-buy" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/book-pdf.php" title="Sun Tzu Art of War Business Strategy PDF">Buy E-Book</a>
+			<a id="tabbtn-summary" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/the-art-of-war/summary.html" title="Game of Business and the Art of War Summary">See Summary</a>
+			<a id="tabbtn-game" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" title="Game of Business and Sun Tzu Art of War Game">Play Game</a>
+			<a id="tabbtn-pdf" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/the-art-of-war/pdf.html" title="The Art of War PDF"><em>The Art of War</em> PDF</a>
+			<a id="tabbtn-level" class="gob-bar-item gob-button gob-hover-white gob-display-right gob-barex" onclick="loadUserData()" href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" title="Game of Business and Sun Tzu Art of War Game">Level
+				<span id="level">0</span>
+			</a>
+		</div>
+
+		<div id='menu-accordion' class="gob-card-2 gob-light-grey gob-center" style="display:none;">
+			<a title="Close Menu" href="javascript:void(0)" onclick="gob_close('menu-accordion')" class="gob-button gob-xlarge gob-right">&times;</a><br/>
+			<div class="gob-container" style="padding-top:0;padding-bottom:32px;">
+				<a href="https://www.gameofbusiness.org/book-pdf.php" class="gob-button gob-block gob-large gob-wide" title="Sun Tzu Art of War Business Strategy PDF">Buy E-Book</a>
+				<a href="https://www.gameofbusiness.org/the-art-of-war/summary.html" class="gob-button gob-block gob-large gob-wide" title="Game of Business and the Art of War Summary">See Summary</a>
+				<a href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" class="gob-button gob-block gob-large gob-wide" title="Game of Business and Sun Tzu Art of War Game">Play Game</a>
+				<a href="https://www.gameofbusiness.org/the-art-of-war/pdf.html" class="gob-button gob-block gob-large gob-wide" title="The Art of War PDF"><em>The Art of War</em> PDF</a>
+			</div>
+		</div>
+		<!-- End Header -->
+		
+		<div class="gob-local-nav gob-sticky gob-row" style="z-index:2;top:0;border-bottom:1px solid rgba(0,0,0,0.16);padding:0 22px;">
+						
+			<div class="gob-local-nav-item">
+				<!-- 
+<a id="tabbtn-overview" href="https://www.gameofbusiness.org/game-of-business.html" title="Game of Business Overview">Overview</a>
+				<a id="tabbtn-transformation" href="https://www.gameofbusiness.org/game-of-business/transformation.html" title="Game of Business Transformation">Transformation</a>
+				<a id="tabbtn-specs" href="https://www.gameofbusiness.org/game-of-business/specs.html" title="Game of Business Tech Specs">Tech Specs</a>
+			
+				<a id="tabbtn-local-menu" title="Open|Close Menu" class="topnav-icons gob-fa gob-fa-menu" href="javascript:void(0)" onclick="gob_open('learn-menu-accordion')">
+					<i class="fa">&#xf0c9;</i> <!~~Instead of class='fas fa-bars', use Unicode for "font awesome" bars when menu collapses because window shrunk: &#xf0c9;~~>
+				</a>
+-->
+			
+				<a id="tabbtn-local-buy" 
+					href="https://www.gameofbusiness.org/book-pdf.php" 
+					title="Sun Tzu Art of War Business Strategy PDF">Buy</a>
+			</div>
+		</div>
+
+		<!-- 
+<div id='learn-menu-accordion' class="gob-card-2 gob-light-grey gob-center" style="display:none;">
+			<a title="Close Menu" href="javascript:void(0)" onclick="gob_close('learn-menu-accordion')" class="gob-button gob-xlarge gob-right">&times;</a><br/>
+			<div class="gob-container" style="padding-top:0;padding-bottom:32px;">
+				<a href="https://www.gameofbusiness.org/game-of-business.html" class="gob-button gob-block gob-large gob-wide" title="Game of Business Overview">Overview</a>
+				<a href="https://www.gameofbusiness.org/game-of-business/transformation.html" class="gob-button gob-block gob-large gob-wide" title="Game of Business Transformation">Transformation</a>
+				<a href="https://www.gameofbusiness.org/game-of-business/specs.html" class="gob-button gob-block gob-large gob-wide" title="Game of Business Tech Specs">Tech Specs</a>
+			</div>
+		</div>
+ -->
+
+		<div style="gob-row">
+
+			<article style="padding:0 12px;">
+			
+				<section class="gob-row" style="margin:0 0 12px 0;text-align:center;position:relative;">
+			
+					<div style="padding:47px 0 0 0;pointer-events:none;position:relative;z-index:1;">
+					
+						<header class="gob-center" style="padding-bottom:14px;">
+							<h1 id="learn-more-headline" style="margin-bottom:13px;font-weight:600;" class="gob-sub-headline">Game of Business</h1>
+							<!--<h1 id="home-headline-small" class="gob-headline"><strong>Sun Tzu <br/>and the <br/>Art of Business</strong></h1>-->
+							<h2 class="gob-headline"><strong>Sun Tzu Art of War Business Strategy</strong></h2> <!--Automate your strategy-->
+						</header>
+				
+						<div class="gob-margin-bottom gob-padding gob-center">
+							<figure>
+								<img src="https://www.gameofbusiness.org/images/GB-cover.gif" alt="Game of Business Book Cover" height="432px" width="288px" />
+							</figure>
+						</div>
+						
+					</div>
+				
+				</section>
+				
+				<section class="gob-row gob-margin-bottom gob-padding">
+					
+					<div style="max-width:80%;margin:auto;">
+
+						<div class="gob-key-features">
+							<h3>The world's most precise transformation of <em>the Art of War</em> for business.</h3>
+						</div>
+					
+						<div>
+							<a href="https://www.gameofbusiness.org/book-pdf.php" class="gob-hover-red" style="border-radius:10px;white-space:normal;" title="Sun Tzu Art of War Business Strategy PDF">See the Complete <em class="gob-nowrap">Game of Business</em> <span class="gob-nowrap">Guide ></span></a>
+						</div>
+				
+					</div>
+
+				</section>
+
+				<section>
+					<div class="gob-row gob-margin-bottom">
+
+						<h2>Sample of How <em>the Art of War</em> is Used for Business Activities</h2>
+						<div class="gob-sample-transforms gob-section2">
+
+							<p>Game of Business transforms <em>Sun Tzu Art of War</em>'s leadership training principles and strategies, so you can test them in business. </p>
+
+							<div class="gob-row gob-margin-bottom gob-card-2 gob-padding">
+								<div class="gob-col s12 m12 l6">
+									<div class="gob-banner gob-principle gob-padding">
+										<p><strong>Principle 1-2.1:</strong> <br/><em>Moral Influence</em> causes associates to be in complete accord with you; thus, associates will be prepared to succeed and fail, unafraid of danger (see Figure 1). </p>
+									</div>
+									<!--
+									<h4>Updating <em>the Art of War</em> Translation</h4>
+									<ul>
+										<li>"Moral Law" is changed to "Moral Influence" because it is the influence or enforcement of moral law that "causes the people to be in complete accord with their ruler," not the law itself. </li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+									<h4>Transforming <em>the Art of War</em> for Business</h4>
+									<ul>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+									-->
+								</div>
+								<div class="gob-col s12 m12 l6">
+									<figure>
+										<img src="images/transforms/GB-transform-1-2-1.png" alt="Transforming Principle 1-2.1" width="411" height="576"/>
+										<figcaption>Figure 1: Transforming Principle 1-2.1</figcaption>
+									</figure>
+								</div>
+							</div>
+							<hr class="gob-hr5">
+							<div class="gob-row gob-margin-bottom gob-card-2 gob-padding">
+								<div class="gob-col s12 m12 l6">
+									<div class="gob-banner gob-principle gob-padding">
+										<p><strong>Principle 1-2.2:</strong> <br/><em>Nature</em> signifies entities that operate without purpose, like night and day, cold and heat, times and seasons (see Figure 2). </p>
+									</div>
+									<!--
+									<h4>Updating <em>the Art of War</em> Translation</h4>
+									<ul>
+										<li>"Moral Law" is changed to "Moral Influence" because it is the influence or enforcement of moral law that "causes the people to be in complete accord with their ruler," not the law itself. </li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+									<h4>Transforming <em>the Art of War</em> for Business</h4>
+									<ul>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+									-->
+								</div>
+								<div class="gob-col s12 m12 l6">
+									<figure>
+										<img src="images/transforms/GB-transform-1-2-2.png" alt="Transforming Principle 1-2.2" width="411" height="576"/>
+										<figcaption>Figure 2: Transforming Principle 1-2.2</figcaption>
+									</figure>
+								</div>
+							</div>
+							<hr class="gob-hr5">
+							<div class="gob-row gob-margin-bottom gob-card-2 gob-padding">
+								<div class="gob-col s12 m12 l6">
+									<div class="gob-banner gob-principle gob-padding">
+										<p><strong>Principle 1-2.4:</strong> <br/><em>Leadership</em> represents the virtues of wisdom, sincerity, benevolence, courage, and discipline (see Figure 3). </p>
+									</div>
+									<!--
+									<h4>Updating <em>the Art of War</em> Translation</h4>
+									<ul>
+										<li>"Moral Law" is changed to "Moral Influence" because it is the influence or enforcement of moral law that "causes the people to be in complete accord with their ruler," not the law itself. </li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+									<h4>Transforming <em>the Art of War</em> for Business</h4>
+									<ul>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+									-->
+								</div>
+								<div class="gob-col s12 m12 l6">
+									<figure>
+										<img src="images/transforms/GB-transform-1-2-4.png" alt="Transforming Principle 1-2.4" width="411" height="576"/>
+										<figcaption>Figure 3: Transforming Principle 1-2.4</figcaption>
+									</figure>
+								</div>
+							</div>
+							<hr class="gob-hr5">
+							<div class="gob-row gob-margin-bottom gob-card-2 gob-padding">
+								<div class="gob-col s12 m12 l6">
+									<div class="gob-banner gob-principle gob-padding">
+										<p><strong>Principle 1-3:</strong> <br/>The Five Factors governing the Game of Business ([2.1, 2.5]) should be familiar to all leaders; they who know them will succeed; they who do not know them will fail (see Figure 4). </p>
+									</div>
+									<!--
+									<h4>Updating <em>the Art of War</em> Translation</h4>
+									<ul>
+										<li>"Moral Law" is changed to "Moral Influence" because it is the influence or enforcement of moral law that "causes the people to be in complete accord with their ruler," not the law itself. </li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+									<h4>Transforming <em>the Art of War</em> for Business</h4>
+									<ul>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+									-->
+								</div>
+								<div class="gob-col s12 m12 l6">
+									<figure>
+										<img src="images/transforms/GB-transform-1-3.png" alt="Transforming Principle 1-3" width="411" height="576"/>
+										<figcaption>Figure 4: Transforming Principle 1-3</figcaption>
+									</figure>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="gob-row gob-sample-transforms">
+
+						<h2><strong><em>Immediately</em> Benefit from the Guidance of the <em>Most Experienced</em> Strategist</strong></h2>
+						<div class="gob-row gob-section2">
+
+							<h3><em>Sun Tzu Art of War</em> Business Strategy</h3>
+							<div class="gob-row gob-section3 gob-margin-bottom">
+
+								<p><a class="gob-hover-go-green" href="https://www.gameofbusiness.org/book-pdf.php" title="Sun Tzu Art of War Business Strategy PDF"><em>Game of Business</em></a> transforms <em>Sun Tzu Art of War</em>'s strategies by—</p>
+								<ol>
+									<li>Comparing <em>Sun Tzu Art of War</em> translations, </li>
+									<li>Organizing the principles of <em>Sun Tzu Art of War</em> systematically, and </li>
+									<li>Replacing references to the military domain with references to their counterparts in the business domain. </li>
+								</ol>
+
+								<h4 style="margin:0"><strong>Increase Your Earnings Using the Principles and Strategies in <em>Sun Tzu Art of War</em></strong></h4>
+								<div class="gob-row gob-section4 gob-margin-bottom">
+
+									<div class="gob-col s12 m12 ml6 l6" style="padding:3%">
+										<p class="gob-nowrap">Step 1: <a href="https://www.gameofbusiness.org/book-pdf.php" class="gob-button gob-dark-grey gob-hover-go-green" style="border-radius:10px" title="Sun Tzu Art of War Business Strategy PDF">Buy E-Book</a></h4>
+										<p class="gob-nowrap">Step 2: <a href="https://www.gameofbusiness.org/the-art-of-war/summary.html" class="gob-button gob-dark-grey" style="border-radius:10px" title="The Art of War Summary">See Summary</a></h4>
+										<p class="gob-nowrap">Step 3: <a href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" class="gob-button gob-dark-grey" style="border-radius:10px" title="Sun Tzu Art of War Game for Business Strategy">Play Game</a></h4>
+									</div>
+
+									<div class="gob-col s12 m12 ml6 l6" style="padding:3%">
+										<div class="gob-light-grey gob-card-2" style="padding:16px;border-radius:10px">
+											<h3>Game of Business Quote:</h3>
+											<div class="gob-sample gob-border-red gob-xlarge" style="border-radius:10px">
+												<q>If you know your customers and know yourself, you need not fear the result of a hundred challenges.</q>
+											</div>
+											<a href="https://www.gameofbusiness.org/the-art-of-war/summary.html#gb-aw-quotes" class="gob-button gob-theme gob-hover-red gob-hover-shadow" style="border-radius:10px" title="Game of Business Quotes">See More <span class="gob-nowrap">Quotes ></span></a>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+
+							<h3 id="factor-list"><strong>Factors Governing the Game of Business</strong></h3>
+							<div class="gob-row gob-section3 gob-margin-bottom">
+
+								<div class="gob-card-2 gob-margin-top gob-margin-bottom gob-padding">
+									<ul>
+										<strong>
+											<li><a href="#gob-f1" title="Moral Influence">Moral Influence</a></li>
+											<li><a href="#gob-f2" title="Nature">Nature</a></li>
+											<li><a href="#gob-f3" title="Domain">Domain</a></li>
+											<li><a href="#gob-f4" title="Leadership">Leadership</a></li>
+											<li><a href="#gob-f5" title="Method">Method</a></li>
+										</strong>
+									</ul>
+								</div>
+
+								<h4 style="font-size:30px"><em>Game of Business</em>: Planning</h4>
+								<div class="gob-row gob-section4 gob-margin-bottom">
+
+									<img class="gob-hide-small" src="images/principles/GB-principle-1-1-M-L.png" alt="Game of Business Principle 1. The Game of Business is of vital importance to the Company. It is a matter of success and failure. It is a road to safety or ruin. Hence it must be investigated." width="2550" height="396"/>
+									<img class="gob-hide-medium gob-hide-large" src="images/principles/GB-principle-1-1-S.png" alt="Game of Business Principle 1. The Game of Business is of vital importance to the Company. It is a matter of success and failure. It is a road to safety or ruin. Hence it must be investigated." width="2550" height="1164"/>
+
+									<img class="gob-hide-small" src="images/principles/GB-principle-1-2-M-L.png" alt="Game of Business Principle 2. The Game of Business is governed by Five Factors. These are to be taken into account in one's deliberations when seeking to determine the conditions existing in the field." width="2550" height="411"/>
+									<img class="gob-hide-medium gob-hide-large" src="images/principles/GB-principle-1-2-S.png" alt="Game of Business Principle 2. The Game of Business is governed by Five Factors. These are to be taken into account in one's deliberations when seeking to determine the conditions existing in the field." width="2550" height="1329"/>
+
+									<div id="gob-f1" class="gob-row gob-margin-bottom gob-padding gob-card-2" style="background-color:#eee;">
+
+										<div class="gob-row">
+											<h5 class="gob-back-link-header gob-left"><strong>Moral Influence</strong></h5>
+											<a title="Factors Governing the Game of Business" class="gob-right gob-hover-white gob-back-link" href="#factor-list">
+												<i class="fa">&#xf0c9;</i> <!--Instead of class='fas fa-bars', use Unicode for "font awesome" bars when menu collapses because window shrunk: &#xf0c9;-->
+											</a>
+										</div>
+										<div class="gob-margin-bottom gob-padding gob-card-2" style="background-color:#fff;">
+											<img class="gob-hide-small" src="images/principles/GB-principle-1-2-1-M-L.png" alt="Game of Business Principle 2-1. Moral Influence causes associates to be in complete accord with you. Thus associates will be prepared to succeed and fail unafraid of danger." width="1270" height="200"/>
+											<img class="gob-hide-medium gob-hide-large" src="images/principles/GB-principle-1-2-1-S.png" alt="Game of Business Principle 2-1. Moral Influence causes associates to be in complete accord with you. Thus associates will be prepared to succeed and fail unafraid of danger." width="2550" height="1185"/>
+										</div>
+
+									</div>
+
+									<div id="gob-f2" class="gob-row gob-margin-bottom gob-padding gob-card-2" style="background-color:#eee;">
+
+										<div class="gob-row">
+											<h5 class="gob-back-link-header gob-left"><strong>Nature</strong></h5>
+											<a title="Factors Governing the Game of Business" class="gob-right gob-hover-white gob-back-link" href="#factor-list">
+												<i class="fa">&#xf0c9;</i> <!--Instead of class='fas fa-bars', use Unicode for "font awesome" bars when menu collapses because window shrunk: &#xf0c9;-->
+											</a>
+										</div>
+										<div class="gob-margin-bottom gob-padding gob-card-2" style="background-color:#fff;">
+											<img class="gob-hide-small" src="images/principles/GB-principle-1-2-2-M-L.png" alt="Game of Business Principle 2-2. Nature signifies entities that operate without purpose like night and day cold and heat times and seasons." width="1270" height="151"/>
+											<img class="gob-hide-medium gob-hide-large" src="images/principles/GB-principle-1-2-2-S.png" alt="Game of Business Principle 2-2. Nature signifies entities that operate without purpose like night and day cold and heat times and seasons." width="2550" height="837"/>
+										</div>
+
+									</div>
+
+									<div id="gob-f3" class="gob-row gob-margin-bottom gob-padding gob-card-2" style="background-color:#eee;">
+
+										<div class="gob-row">
+											<h5 class="gob-back-link-header gob-left"><strong>Domain</strong></h5>
+											<a title="Factors Governing the Game of Business" class="gob-right gob-hover-white gob-back-link" href="#factor-list">
+												<i class="fa">&#xf0c9;</i> <!--Instead of class='fas fa-bars', use Unicode for "font awesome" bars when menu collapses because window shrunk: &#xf0c9;-->
+											</a>
+										</div>
+										<div class="gob-margin-bottom gob-padding gob-card-2" style="background-color:#fff;">
+											<img class="gob-hide-small" src="images/principles/GB-principle-1-2-3-M-L.png" alt="Game of Business Principle 2-3. Domain comprises distances great and small danger and security Accessible and Constricted situations and chances of success and failure." width="1270" height="486"/>
+											<img class="gob-hide-medium gob-hide-large" src="images/principles/GB-principle-1-2-3-S.png" alt="Game of Business Principle 2-3. Domain comprises distances great and small danger and security Accessible and Constricted situations and chances of success and failure." width="2550" height="2679"/>
+										</div>
+
+									</div>
+
+									<div id="gob-f4" class="gob-row gob-margin-bottom gob-padding gob-card-2" style="background-color:#eee;">
+
+										<div class="gob-row">
+											<h5 class="gob-back-link-header gob-left"><strong>Leadership</strong></h5>
+											<a title="Factors Governing the Game of Business" class="gob-right gob-hover-white gob-back-link" href="#factor-list">
+												<i class="fa">&#xf0c9;</i> <!--Instead of class='fas fa-bars', use Unicode for "font awesome" bars when menu collapses because window shrunk: &#xf0c9;-->
+											</a>
+										</div>
+										<div class="gob-margin-bottom gob-padding gob-card-2" style="background-color:#fff;">
+											<img class="gob-hide-small" src="images/principles/GB-principle-1-2-4-M-L.png" alt="Game of Business Principle 2-4. Leadership  represents the virtues of wisdom sincerity benevolence courage and discipline." width="1243" height="576"/>
+											<img class="gob-hide-medium gob-hide-large" src="images/principles/GB-principle-1-2-4-S.png" alt="Game of Business Principle 2-4. Leadership  represents the virtues of wisdom sincerity benevolence courage and discipline." width="2550" height="2338"/>
+										</div>
+
+									</div>
+
+									<div id="gob-f5" class="gob-row gob-margin-bottom gob-padding gob-card-2" style="background-color:#eee;">
+
+										<div class="gob-row">
+											<h5 class="gob-back-link-header gob-left"><strong>Method</strong></h5>
+											<a title="Factors Governing the Game of Business" class="gob-right gob-hover-white gob-back-link" href="#factor-list">
+												<i class="fa">&#xf0c9;</i> <!--Instead of class='fas fa-bars', use Unicode for "font awesome" bars when menu collapses because window shrunk: &#xf0c9;-->
+											</a>
+										</div>
+										<div class="gob-margin-bottom gob-padding gob-card-2" style="background-color:#fff;">
+											<img class="gob-hide-small" src="images/principles/GB-principle-1-2-5-M-L.png" alt="Game of Business Principle 2-5. Method can be understood by organizational control leadership systems creation and maintenance of paths by which resources may reach the company and controlled use of resources." width="1270" height="542"/>
+											<img class="gob-hide-medium gob-hide-large" src="images/principles/GB-principle-1-2-5-S.png" alt="Game of Business Principle 2-5. Method can be understood by organizational control leadership systems creation and maintenance of paths by which resources may reach the company and controlled use of resources." width="2550" height="3267"/>
+										</div>
+
+									</div>
+
+									<img class="gob-hide-small" src="images/principles/GB-principle-1-3-M-L.png" alt="Game of Business Principle 3. The Five Factors governing the Game of Business should be familiar to all leaders. They who know them will succeed. They who do not know them will fail." width="2550" height="402"/>
+									<img class="gob-hide-medium gob-hide-large" src="images/principles/GB-principle-1-3-S.png" alt="Game of Business Principle 3. The Five Factors governing the Game of Business should be familiar to all leaders. They who know them will succeed. They who do not know them will fail." width="2550" height="1170"/>
+
+									<!--
+									<img src="images/principles/GB-1.png" alt="Game of Business Principle 1. The Game of Business is of vital importance to the Company. It is a matter of success and failure. It is a road to safety or ruin. Hence it must be investigated."/>
+									<img src="images/principles/GB-2.png" alt="Game of Business Principle 2. The Game of Business is governed by Five Factors. These are to be taken into account in one's deliberations when seeking to determine the conditions existing in the field."/>
+
+									<div class="gob-border gob-padding gob-margin-bottom">
+										<h5 style="font-size:24px"><strong>Moral Influence</strong></h5>
+										<img src="images/principles/GB-2-1.png" alt="Game of Business Principle 2-1. Moral Influence causes associates to be in complete accord with you. Thus associates will be prepared to succeed and fail unafraid of danger."/>
+									</div>
+									<div class="gob-border gob-padding gob-margin-bottom">
+										<h5 style="font-size:24px"><strong>Nature</strong></h5>
+										<img src="images/principles/GB-2-2.png" alt="Game of Business Principle 2-2. Nature signifies entities that operate without purpose like night and day cold and heat times and seasons."/>
+									</div>
+									<div class="gob-border gob-padding gob-margin-bottom">
+										<h5 style="font-size:24px"><strong>Domain</strong></h5>
+										<img src="images/principles/GB-2-3.png" alt="Game of Business Principle 2-3. Domain comprises distances great and small danger and security Accessible and Constricted situations and chances of success and failure."/>
+									</div>
+									<div class="gob-border gob-padding gob-margin-bottom">
+										<h5 style="font-size:24px"><strong>Leadership</strong></h5>
+										<img src="images/principles/GB-2-4.png" alt="Game of Business Principle 2-4. Leadership  represents the virtues of wisdom sincerity benevolence courage and discipline."/>
+									</div>
+									<div class="gob-border gob-padding gob-margin-bottom">
+										<h5 style="font-size:24px"><strong>Method</strong></h5>
+										<img src="images/principles/GB-2-5.png" alt="Game of Business Principle 2-5. Method can be understood by organizational control leadership systems creation and maintenance of paths by which resources may reach the company and controlled use of resources."/>
+									</div>
+									<img src="images/principles/GB-3.png" alt="Game of Business Principle 3. The Five Factors governing the Game of Business should be familiar to all leaders. They who know them will succeed. They who do not know them will fail."/>
+									-->
+								</div>
+
+								<div class="gob-row gob-margin-bottom">
+									<a href="https://www.gameofbusiness.org/book-pdf.php" class="gob-right gob-button gob-theme gob-hover-red gob-hover-shadow" style="border-radius:10px;white-space:normal;" title="Sun Tzu Art of War Business Strategy PDF">See <em>Game of Business</em> Book ></a>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</section>
+				
+				<section>
+				
+					<!-- Principle Transforms -->
+					<h2 id="sample-transforms"><strong>Sample Principle and Strategy Transformations <span class="gob-nowrap">(Figures [1, 4])</span></strong></h2>
+					<div class="gob-section2 gob-row gob-sample-transforms gob-xlarge-margin-bottom">
+						<div>
+							<div class="gob-col s12 m12 l6 gob-large-margin-bottom">
+								<figure>
+									<img src="https://www.gameofbusiness.org/images/transforms/GB-transform-10-1-2.png" alt="Transforming Principle 10-1.2"/>
+									<figcaption>Figure 1: Transforming <span class="gob-nowrap">Principle 10-1.2</span></figcaption>
+								</figure>
+							</div>
+							<div class="gob-col s12 m12 l6 gob-large-margin-bottom">
+								<figure>
+									<img src="https://www.gameofbusiness.org/images/transforms/GB-transform-5-14-16.png" alt="Transforming Principle 5-14-16"/>
+									<figcaption>Figure 2: Transforming <span class="gob-nowrap">Strategies 5-[14, 16]</span></figcaption>
+								</figure>
+							</div>
+						</div>
+						<div>
+							<div class="gob-col s12 m12 l6 gob-large-margin-bottom">
+								<figure>
+									<img src="https://www.gameofbusiness.org/images/transforms/GB-transform-3-3.png" alt="Transforming Principle 3-3"/>
+									<figcaption>Figure 3: Transforming <span class="gob-nowrap">Strategy 3-3</span></figcaption>
+								</figure>
+							</div>
+							<!-- 
+	<div class="gob-col s12 m12 l6 gob-large-margin-bottom">
+								<figure>
+									<img src="https://www.gameofbusiness.org/images/transforms/GB-transform-1-2-2.png" alt="Transforming Principle 1-2.2"/>
+									<figcaption>Figure 4: Transforming <span class="gob-nowrap">Principle 1-2.2</span></figcaption>
+								</figure>
+							</div>
+						
+	-->
+							<div class="gob-col s12 m12 l6 gob-large-margin-bottom">
+								<figure>
+									<img src="https://www.gameofbusiness.org/images/transforms/GB-transform-13-18.png" alt="Transforming Principle 13-18"/>
+									<figcaption>Figure 4: Transforming <span class="gob-nowrap">Strategy 13-18</span></figcaption>
+								</figure>
+							</div>
+						</div>
+						<!-- 
+	<div>
+							<div class="gob-col s12 m12 l6 gob-large-margin-bottom">
+								<figure>
+									<img src="https://www.gameofbusiness.org/images/transforms/GB-transform-13-18.png" alt="Transforming Principle 13-18"/>
+									<figcaption>Figure 5: Transforming <span class="gob-nowrap">Principle 13-18</span></figcaption>
+								</figure>
+							</div>
+							<div class="gob-col s12 m12 l6 gob-large-margin-bottom">
+								<figure>
+									<img src="https://www.gameofbusiness.org/images/transforms/GB-transform-1-2-4.png" alt="Transforming Principle 1-2.4"/>
+									<figcaption>Figure 6: Transforming <span class="gob-nowrap">Principle 1-2.4</span></figcaption>
+								</figure>
+							</div>
+						</div>
+	-->
+					
+						<p style="margin-bottom:12px;"><em>Game of Business</em> transforms <em>Sun Tzu Art of War</em>'s principles and strategies by—</p>
+						<ol style="margin-top:0;">
+							<li>Comparing <em>Sun Tzu Art of War</em> translations, </li>
+							<li>Organizing the principles and strategies of <em>Sun Tzu Art of War</em> systematically, and </li>
+							<li>Replacing references to the military domain with references to their counterparts in the business domain. </li>
+						</ol>
+					</div>
+					
+				</section>
+				
+				<section>
+				
+					<!-- Principle and Strategy Groups -->
+<!-- 
+					<h4><strong>The <em>Principles</em> and <em>Strategies</em> from <em>Sun Tzu Art of War</em> lead on to each other in turn. It is like moving in a circle, because you never come to an end. Who can exhaust the possibilities of </strong></h4>
+ -->
+ 					<h4><strong>In the Game of Business, there are two groups of guidelines: <em>Principles</em> and <em>Strategies</em>. <br/><br/>Define <em>Principle</em>: A comprehensive and fundamental proposition that serves as the foundation for a chain of reasoning. <br/><br/>Define <em>Strategy</em>: A plan of action designed to achieve success. </strong> </h4> <!--also strategy is an adaptation that serves an important function in achieving success-->
+					<div class="gob-row gob-section4">
+						<!-- Principle Groups -->
+						<div class="gob-principle-groups gob-col s12 m12 l6 gob-padding">
+
+							<h5 style="font-size:24px"><strong>Strategic Principle Sets</strong></h5>
+
+							<hr class="gob-hr5"/>
+
+							<ul class="gob-set-list gob-margin-bottom" style="list-style:none;">
+								<!-- 
+<li>Method to Succeed in the Game of Business</li>
+								
+								<li>Five Factors governing the Game of Business</li>
+								
+								<li>Method to Succeed in the Game of Business</li>
+-->
+								
+								<li>
+									<span id="gob-factors-displayer" class="gob-displayer">
+										<a id="toggle-factors-display" class="gob-hover-go-green" href="javascript:void(0);" title="Show|Hide Method to Succeed" onclick="gob_open_dropdown('gob-example-method')"><i class="fa fa-caret-down" style="display: none;"></i><i class="fa fa-caret-up" style="display: inline;"></i> Method to Succeed in the Game of Business: </a>
+									</span>
+									<div class="gob-example-method gob-card gob-padding gob-margin-bottom">
+										<ol class="gob-example-list">
+											<li>Measurement, </li>
+											<li>Estimation of Quantity, </li>
+											<li>Calculation, </li>
+											<li>Balancing of Chances, and </li>
+											<li>Success. </li>
+										</ol>
+									</div>
+								</li>
+								<li>
+									<span id="gob-factors-displayer" class="gob-displayer">
+										<a id="toggle-factors-display" class="gob-hover-go-green" href="javascript:void(0);" title="Show|Hide Five Factors" onclick="gob_open_dropdown('gob-example-factors')"><i class="fa fa-caret-down" style="display: none;"></i><i class="fa fa-caret-up" style="display: inline;"></i> Five Factors governing the Game of Business: </a>
+									</span>
+									<div class="gob-example-factors gob-card gob-padding gob-margin-bottom">
+										<ol class="gob-example-list">
+											<li>Moral Influence, </li>
+											<li>Nature, </li>
+											<li>Domain, </li>
+											<li>Leadership, and </li>
+											<li>Method. </li>
+										</ol>
+									</div>
+								</li>
+								<li>
+									<span id="gob-factors-displayer" class="gob-displayer">
+										<a id="toggle-factors-display" class="gob-hover-go-green" href="javascript:void(0);" title="Show|Hide Seven Considerations" onclick="gob_open_dropdown('gob-example-considerations')"><i class="fa fa-caret-down" style="display: none;"></i><i class="fa fa-caret-up" style="display: inline;"></i> Seven Considerations to determine the business conditions, and forecast success or failure: </a>
+									</span>
+									<div class="gob-example-considerations gob-card gob-padding gob-margin-bottom">
+										<ol class="gob-example-list">
+											<li>Do your mentors have Moral Influence? </li>
+											<li>Do your leaders have ability? </li>
+											<li>Are advantages of Nature and Domain harmonized? </li>
+											<li>Is discipline rigorously enforced? </li>
+											<li>Is your company strong? </li>
+											<li>Are associates and candidates highly trained? </li>
+											<li>Are rewards and punishments consistent? </li>
+										</ol>
+									</div>
+								</li>
+							</ul>
+
+							<div class="gob-row gob-text-dark-gray gob-margin-bottom">
+								<a id="toggle-principle-display" title="Show|Hide More Principles" class="gob-hover-go-green" href="javascript:void(0)" onclick="gob_open_class('gob-more-principles')"><span id="more-less-principles">Show</span> More Principles</a>
+							</div>
+
+							<ul class="gob-set-list gob-more-principles" style="display:none;list-style:none;">
+								
+								<li>Five Predictors of Success</li>
+								
+								<li>Five Strategic Considerations</li>
+								
+								<li>Five Dangerous Faults</li>
+								
+								<li>Four Branches of Business Knowledge</li>
+								
+								<li>Six Dangerous Situations</li>
+								
+								<li>Four Ambush Situations</li>
+								
+								<li>Six Areas of Activity</li>
+								
+								<li>Six Distinct Calamities</li>
+								
+								<li>Responsibilities for Success</li>
+								
+								<li>Essential Characteristics of Leaders</li>
+								
+								<li>Five Gains of Progressing Fervently</li>
+								
+								<li>Five Kinds of Information</li>
+
+								<hr/>
+								
+								<li>Dangers of Business</li>
+								
+								<li>Forms of Leadership</li>
+								
+								<li>Misfortune Leaders Can Bring</li>
+								
+								<li>Security Against Failure</li>
+								
+								<li>Direct and Indirect Methods</li>
+								
+								<li>Progress and Defense</li>
+								
+								<li>Numerical Power</li>
+								
+								<li>Adequate and Thorough Planning</li>
+								
+								<li>Clever Resourcefulness</li>
+								
+								<li>Company Costs</li>
+								
+								<li>Delays</li>
+								
+								<li>Learning from Customers</li>
+								
+								<li>Evolution of Success</li>
+								
+								<li>Mutual Benefit</li>
+								
+								<li>Varieties of Situation</li>
+								
+								<li>Skillful Accomplishment</li>
+								
+								<li>Know the Conditions</li>
+								
+								<li>Change is a Constant Factor</li>
+								
+								<li>Encroaching Companies</li>
+								
+								<li>Standard of Courage</li>
+								
+								<li>Responsibility of Leaders</li>
+								
+								<li>Aspects of Business to be Studied</li>
+								
+								<li>Conditions to Accomplish a Fervent Pursuit</li>
+
+							</ul>
+
+							<hr class="gob-hr5"/>
+
+						</div>
+
+						<!-- Strategy Groups -->
+						<div id="strategy-groups" class="gob-col s12 m12 l6 gob-padding">
+
+							<hr class="gob-hr5 gob-hide-medium-large"/>
+
+							<h5 style="font-size:24px"><strong>Strategy Sets</strong></h5>
+
+							<hr class="gob-hr5"/>
+
+							<ul class="gob-set-list" style="list-style:none;">
+								<li>
+									<span id="gob-best-strategy-displayer" class="gob-displayer">
+										<a id="toggle-best-strategy-display" class="gob-hover-go-green" href="javascript:void(0);" title="Show|Hide the Best Strategy" onclick="gob_open_dropdown('gob-example-best-strategy')"><i class="fa fa-caret-down" style="display: none;"></i><i class="fa fa-caret-up" style="display: inline;"></i> In the practical Game of Business, the <strong>best strategy of all</strong> is to remain intact rather than allowing damage. </a>
+									</span>
+									<div class="gob-example-best-strategy gob-card gob-padding gob-margin-bottom">
+										<ol class="gob-example-list">
+											<li>Hence, to persevere and overcome in all your struggles is not Supreme Excellence; Supreme Excellence consists of achieving success without struggling. </li>
+										</ol>
+									</div>
+
+									<hr/>
+								</li>
+								<li class="gob-margin-bottom">
+									<span id="gob-customer-strategies-displayer" class="gob-displayer">
+										<a id="toggle-customer-strategies-display" class="gob-hover-go-green" href="javascript:void(0);" title="Show|Hide Strategies That Apply to Customers" onclick="gob_open_dropdown('gob-example-customer-strategies')"><i class="fa fa-caret-down" style="display: none;"></i><i class="fa fa-caret-up" style="display: inline;"></i> Use strategies that apply to customers: </a>
+									</span>
+									<div class="gob-example-customer-strategies gob-card gob-padding gob-margin-bottom">
+										<ol class="gob-example-list">
+											<li>If you provide incentives, customers will be increased; </li>
+											<li>If you make solutions for customers, they will be kept engaged; and </li>
+											<li>If you hold out allurements, customers will rush to any given point. </li>
+										</ol>
+									</div>
+
+									<hr class="gob-more-strategies" style="display:none;"/>
+								</li>
+							</ul>
+
+							<div class="gob-row gob-text-dark-gray gob-margin-bottom">
+								<a id="toggle-strategy-display" title="Show|Hide More Strategies" class="gob-hover-go-green" href="javascript:void(0)" onclick="gob_open_class('gob-more-strategies')"><span id="more-less-strategies">Show</span> More Strategies</a>
+							</div>
+
+							<ul class="gob-set-list gob-more-strategies" style="display:none;list-style:none;">
+								<li>
+									<div>Use strategies for—</div>
+									<ul style="list-style:none;">
+									
+										<li>Preliminary Analysis</li>
+										
+										<li>Progressing Fervently</li>
+										
+										<li>Using Customers to Augment Strength</li>
+										
+										<li>Handling Large Masses</li>
+										
+										<li>Encroaching Competitive Domains</li>
+										
+										<li>Strategic Operations</li>
+										
+										<li>Control of a Large Company</li>
+										
+										<li>Simulated Appearances</li>
+										
+										<li>Indirect and Direct Strategies</li>
+									
+									</ul>
+
+									<hr/>
+
+									<div>Use strategies depending on—</div>
+									<ul style="list-style:none;">
+									
+										<li>Your Condition</li>
+										
+										<li>Disadvantages of Associates</li>
+										
+										<li>Advantages of Associates</li>
+										
+										<li>The Ratio of the Number of Associates of Your Company to That of Opponents</li>
+										
+										<li>Associates' Conditions</li>
+										
+										<li>The Situation</li>
+									
+									</ul>
+
+									<hr/>
+
+									<div>Use strategies to manage—</div>
+									<ul style="list-style:none;">
+									
+										<li>Mood</li>
+										
+										<li>Psychology</li>
+										
+										<li>Strength</li>
+										
+										<li>Circumstances</li>
+										
+										<li>Business Interactions</li>
+									
+									</ul>
+
+									<hr/>
+
+									<div>Use strategies to—</div>
+									<ul style="list-style:none;">
+									
+										<li>Apply Knowledge for Success</li>
+										
+										<li>Excel in Succeeding with Ease</li>
+										
+										<li>Create Tools and Services</li>
+										
+										<li>Secure Customers</li>
+										
+										<li>Be Ardent and Precise</li>
+										
+										<li>Prevent Customers from Overwhelming Us</li>
+										
+										<li>Reach the Goal Before Opponents</li>
+										
+										<li>Work with Local Guides</li>
+										
+										<li>Blend Considerations of Advantage and Disadvantage</li>
+										
+										<li>Be Ready for Customers and Opponents</li>
+										
+										<li>Resolve Inconsistencies</li>
+										
+										<li>Unite Associates</li>
+										
+										<li>Confront Failure</li>
+										
+										<li>Earn Supporters and Succeed</li>
+										
+										<li>Remain Secure and Intact</li>
+										
+										<li>Discover Information</li>
+									
+									</ul>
+								</li>
+							</ul>
+
+							<hr class="gob-hr5"/>
+
+						</div>
+					</div>
+
+					<!-- Example Principles and Strategies -->
+					<!--<div class="gob-row gob-example gob-margin-bottom">
+						<div class="gob-col s12 m12 l6 gob-border gob-padding">
+							<h3><strong>10 Example Principles</strong></h3>
+							<ul class="gob-ul">
+								<li>The Game of Business is of vital importance to the Company; it is a matter of success and failure; it is a road to safety or ruin. Hence it must be investigated.</li>
+								<li>In accordance with favorable circumstances, one should modify one’s plans.</li>
+								<li>When you engage in actual struggling, if success is long in coming, then associates’ minds will grow dull and their ardor will be damped. If you focus solely on acquiring unadaptable customers, you will exhaust your strength.</li>
+								<li>The good businesspeople of old first put themselves beyond the possibility of failure, and then waited for an opportunity of acquiring customers.</li>
+								<li>Whoever is first in the field, and awaits the coming of opponents, will be fresh for challenges; whoever is second in the field, and must hasten to action, will arrive exhausted.</li>
+								<li>Through the principles of subtlety and secrecy, we learn to be invisible and inaudible; hence, we can control our fates.</li>
+								<li>All people can see the tactics whereby I succeed, but what none can see is the strategy out of which success is evolved.</li>
+								<li>Do not repeat the tactics that have gained you one success, but let your methods be regulated by the infinite variety of circumstances.</li>
+								<li>The principle on which to lead a company is to set up one standard of courage that all must reach.</li>
+								<li>If you are careful of your people, and occupy stable positions, the company will be free from disorder of every kind; this will result in success.</li>
+							</ul>
+						</div>
+						<div class="gob-col s12 m12 l6 gob-border gob-padding">
+							<h3><strong>10 Example Strategies</strong></h3>
+							<ul class="gob-ul">
+								<li>If associates are underestimating you, earn their confidence.</li>
+								<li>To benefit from natural advantages, we must use local guides.</li>
+								<li>In difficult situations, do not settle.</li>
+								<li>In central situations—those in which important paths intersect—join your allies.</li>
+								<li>If there is much uncertainty about an obstacle you wish to cross, causing inconsistencies to appear, resolve the inconsistencies before trying to overcome the obstacle.</li>
+								<li>If in training associates, instructions are habitually used, the company will be well-disciplined; if not, its discipline will be bad.</li>
+								<li>If you treat your associates with care, they will follow you through the most threatening dangers; if you regard them as your beloved children, they will support you until failure.</li>
+								<li>In difficult situations, keep steadily advancing.</li>
+								<li>In easy situations, see that there are close connections between all parts of your company.</li>
+								<li>No leaders should enter into business simply out of resentment, because vexation may be followed by content, but time can never be returned.</li>
+							</ul>
+						</div>
+					</div>-->
+
+				</section>
+				
+				<div class="gob-display-section">
+					<div id="gob-preface-displayer" class="gob-row gob-displayer">
+						<a id="toggle-preface-display" class="gob-hover-go-green" href="javascript:void(0);" title="Show|Hide Appendix" onclick="gob_open_dropdown('gob-preface')"><i class="fa fa-caret-down" style="display: none;"></i><i class="fa fa-caret-up" style="display: inline;"></i> <strong>Appendix: How to Find a Principle in <em class="gob-nowrap">Game of Business</em></strong></a>
+					</div>
+
+					<hr class="gob-hr3"/>
+
+					<div class="gob-preface gob-row gob-book-section">
+						<p class="gob-page-header">
+							<em>Game of Business</em> <span class="gob-section-title gob-hide-small">How to Find a Principle in <em>Game of Business</em></span>
+							<div class="gob-hide-medium gob-hide-large">How to Find a Principle in <em>Game of Business</em></div>
+							<hr class="gob-hr5"/>
+						</p>
+
+						<div class="gob-row">
+							<div class="gob-col xxs10 xs10 temp-s10 sm10 temp-m10 temp-ml10 temp-l10 temp-xl10">
+								<h4 class="gob-chapter-title"><strong>Appendix: How to Find a Principle in <em>Game of Business</em></strong></h4>
+							</div>
+							<div class="gob-col xxs2 xs2 temp-s2 sm2 temp-m2 temp-ml2 temp-l2 temp-xl2 gob-toc-link">
+								<!-- 
+<a title="Table of Contents" class="gob-button gob-hover-white gob-padding-16" href="#table-of-contents">
+									<i class="fa">&#xf0c9;</i> <!~~Instead of class='fas fa-bars', use Unicode for "font awesome" bars when menu collapses because window shrunk: &#xf0c9;~~>
+								</a>
+ -->
+								
+								<a class="gob-button gob-hover-white gob-padding-16" href="javascript:void(0)" onclick="gob_show_sections('gob-look-inside')" title="Table of Contents" >
+									<i class="fa">&#xf0c9;</i> <!--Instead of class='fas fa-bars', use Unicode for "font awesome" bars when menu collapses because window shrunk: &#xf0c9;-->
+								</a>
+							</div>
+						</div>
+
+						<!--<div class="gob-page-title">
+
+							<h4 class="gob-chapter-title gob-title-item gob-hover-white gob-padding-16"><strong>Preface: How to Find a Principle in <em>Game of Business</em></strong></h4>
+
+							<a class="gob-title-item gob-button gob-hover-white gob-padding-16" href="#table-of-contents" title="Table of Contents">
+								<i class="fa">&#xf0c9;</i>
+							</a>
+
+						</div>-->
+
+						<div class="gob-center gob-margin-top">
+							<img src="https://www.gameofbusiness.org/images/GB-sample-page.png" alt="Game of Business Sample Page"/>
+						</div>
+
+						<p>Sample Page of <em>Game of Business</em>: </p>
+						<ol>
+							<li>Chapter number and title. </li>
+							<li>Header showing the topic being discussed on this page. </li>
+							<li>
+								Writing containing a principle. The numeric code consists of the principle's number in the chapter.
+								<ol>
+									<li>Extra space between principles shows that they are related to different topics within the chapter. The principles are spaced close together when part of the same subtopic, and noticeably farther apart when part of different subtopics. A noticeable space after a principle means that the next principle is part of a different subtopic. </li>
+									<li>The principles within a subtopic depend on each other to be understood. Dependent statements are placed close to each other, whereas there is additional space between independent statements.</li>
+								</ol>
+							</li>
+
+							<li>
+								Writing containing a sub-principle. The numeric code consists of the principle's number in the chapter, and sub-principle numbers separated by points.
+								<ol>
+									<li>An indented principle means that it is part of a set within a principle. The principles are in a sequence contained by the overarching principle above it. Hierarchical statements are denoted by adding a second number to the principle’s code, separated by a decimal point (e.g. 4.7 refers to the seventh statement or question of principle 4).</li>
+								</ol>
+							</li>
+						</ol>
+
+						<hr class="gob-hr3"/>
+					</div>
+				</div>
+
+			</article>
+
+			<div id="contact-modal"></div>
+
+		</div> <!--end main-->
+
+		<div id="footer"></div>
+
+		<script src="https://www.gameofbusiness.org/scripts/gb-sections.js"></script>
+		<script src="https://www.gameofbusiness.org/scripts/gb-display.js"></script>
+
+	</body>
+</html>
