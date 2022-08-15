@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--Define charset.-->
+ 		<meta charset="utf-8"/>
+ 		
+ 		<!--Provide a HTTP header for the info/value of the content attribute.-->
+ 		<meta http-equiv="content-type" content="text/html"/>
+ 		
+ 		<!-- 
+			Give browser instructions on how to control the page's dimensions and scaling.
+			Set the width of the page to follow the screen-width of the device. 
+			Set the initial zoom level when the page is first loaded by the browser. 
+		-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		
+		<!--Define the author of the web page.-->
+		<meta name="author" content="Sun Tzu"/>
+
+		<meta name="robots" content="noindex"/>
+		
+		<title>Game of Business—Error 404: Page Not Found</title>
+		
+		<link rel="stylesheet" href="../css/gob.css"/>
+		
+		<link rel="canonical" href="https://gameofbusiness.net/404"/>
+	
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<script src="../scripts/jquery-2.1.4.min.js"></script>
+		<script src="../scripts/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+	
+		<div id="header"></div>
+		
+		<div class="gob-main gob-main-content"> 
+			
+			<div class="gob-col l12 gob-center" style="padding:3%">
+				<div id="error-response">
+					<div id="logo">
+						<h1 >Game of Business</h1>
+					</div>
+		
+					<div id="error-code">
+						<p>An error occurred. Error code: <strong>404</strong>.</p>
+					</div>
+		
+					<div id="error-info">
+						<p>The server has not found anything matching the requested Uniform Resource Identifier (Request-URI) <span id="current-path"></span>. No indication is given of whether the condition is temporary or permanent.</p>
+						<p>The requested resource could not be found, but may be available again in the future.</p>
+						<!--<p>All we know is that the requested URL <span id="current-path"></span> was not found on this server.</p>-->
+					</div>
+				</div>
+			</div>
+			
+			<hr/>
+			
+			<div class="gob-row gob-center" style="padding:3%">
+				<a href="../sitemap.html" alt="Sitemap" title="Sitemap" style="color:blue;text-decoration:underline">See our site map ></a>
+			</div>
+			
+			<div id="contactModal" class="gob-modal fade" role="dialog">
+				<div class="gob-modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header" id="contactHeader">
+							<h4 class="modal-title">Contact Game of Business</h4>
+						</div>
+						<div class="modal-body" id="contactBody"></div>
+					</div>
+				</div>
+			</div>
+		</div> <!--end main-->
+		
+		<div id="footer"></div>
+		
+		<script type="text/javascript">
+			function gobOpen()	{
+				var x = document.getElementById("myAccordion");
+				if (x.style.display === 'none')	{
+					x.style.display = 'block';
+				}	else	{
+					x.style.display = 'none';
+				}
+			}
+			function gobClose() {
+				document.getElementById("myAccordion").style.display = "none";
+			}
+			
+			function showContactModal()
+			{
+				var contactMsg = "Email suntzu@gameofbusiness.net if you have questions about the book, game, company, or other related topics.";
+			
+				$('#contactBody').html(contactMsg);
+			
+				$('#contactModal').modal('show');
+			}
+			
+			document.getElementById("current-path").innerHTML = window.location.pathname;
+		</script>
+		
+	</body>
+</html>

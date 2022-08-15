@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--Define charset.-->
+ 		<meta charset="utf-8"/>
+
+ 		<!--Provide a HTTP header for the info/value of the content attribute.-->
+ 		<meta http-equiv="content-type" content="text/html"/>
+
+ 		<!--
+			Give browser instructions on how to control the page's dimensions and scaling.
+			Set the width of the page to follow the screen-width of the device.
+			Set the initial zoom level when the page is first loaded by the browser.
+		-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<!--Define keywords for search engines.-->
+		<meta name="Keywords" content="Game of Business, Sun Tzu, Art of Business, Art of War in business, Sun Tzu, leadership training, business strategy, team training, strategy game, business book, strategize, military strategy, leadership book, Sun Tsu, Sun Tzu Art of War, business, consulting, business plans, finance, investing, venture capital, leadership, management, learning, training, strategy, game, ultimate guide"/>
+
+		<!--Define a description of the web page.-->
+		<meta name="description" content="GAME OF BUSINESS — Sun Tzu and the Art of Business — Game of Business can guide your business strategy, because it the most precise transformation of the Art of War for business. "/>
+
+		<!--Define the author of the web page.-->
+		<meta name="author" content="Sun Tzu"/>
+
+		<!-- Facebook Open Graph allows defining properties to create rich text: http://ogp.me/-->
+		<meta property="og:site_name" content="Game of Business"/> <!-- Show site name as root of navigation path -->
+		<meta property="og:title" content="Game of Business | Sun Tzu and the Art of Business"/>
+		<meta property="og:description" content="GAME OF BUSINESS — Sun Tzu and the Art of Business — Game of Business can guide your business strategy, because it the most precise transformation of the Art of War for business. "/>
+		<meta property="og:image" content="https://www.gameofbusiness.org/images/GB-logo.jpg"/>
+
+		<title>Game of Business | Sun Tzu and the Art of Business</title>
+
+		<link rel="stylesheet" href="https://www.gameofbusiness.org/css/gob.css"/>
+
+		<link rel="canonical" href="https://www.gameofbusiness.org/"/>
+
+		<!--<link rel="stylesheet" href="<?php bloginfo(stylesheet_url); echo '?' . filemtime( get_stylesheet_directory() . '/gob.css'); ?>" type="text/css" media="screen, projection" />-->
+
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+		<script src="https://www.gameofbusiness.org/scripts/jquery-2.1.4.min.js"></script>
+		<script src="https://www.gameofbusiness.org/scripts/bootstrap.min.js"></script>
+		
+		<!-- 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+ -->
+
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"url": "https://www.gameofbusiness.org/",
+			"name": "Game of Business",
+			"description": "If your goal is to start an excellent business or significantly increase earnings, Game of Business can help you. Game of Business uses the strategic principles from Sun Tzu Art of War to recommend a plan of action for your company. ",
+			"logo": "https://gameofbusiness.org/images/GB-logo.jpg",
+			"contactPoint":
+			{
+				"@type": "ContactPoint",
+				"telephone": "+1-516-967-6092",
+				"email": "support@gameofbusiness.org",
+				"contactType": "Customer Support",
+				"areaServed": "US",
+				"availableLanguage": "English"
+			}
+		}
+		</script>
+
+	</head>
+
+	<body>
+
+		
+
+		<div>
+
+			<article>
+				<div class="gob-sticky gob-row" style="top:0;z-index:2;">
+					<!-- Start Header -->
+					<div class="gob-bar gob-theme gob-card-2 gob-wide gob-topnav" style="height:44px;">
+						<a id="tabbtn-menu" title="Open|Close Menu" class="gob-bar-item gob-button gob-hover-white gob-fa gob-fa-menu" href="javascript:void(0)" onclick="gob_open_menu('menu-accordion', this)" style="display:inline-block;">
+							<!-- <i class="fa">&#xf0c9;</i> --> <!--Instead of class='fas fa-bars', use Unicode for "font awesome" bars when menu collapses because window shrunk: &#xf0c9;-->
+							<div class="bar1"></div>
+							<div class="bar2"></div>
+							<div class="bar3"></div>
+						</a>
+						<a id="tabbtn-logo" href='https://www.gameofbusiness.org' class="gob-bar-item gob-button gob-hover-white"><strong>Game of Business</strong></a>
+						<a id="tabbtn-buy" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/book-pdf.php" title="Sun Tzu Art of War Business Strategy PDF">Buy E-Book</a>
+						<a id="tabbtn-summary" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/the-art-of-war/summary.html" title="Game of Business and the Art of War Summary">See Summary</a>
+						<a id="tabbtn-game" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" title="Game of Business and Sun Tzu Art of War Game">Play Game</a>
+						<a id="tabbtn-pdf" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/the-art-of-war/pdf.html" title="The Art of War PDF"><em>The Art of War</em> PDF</a>
+						<a id="tabbtn-level" class="gob-bar-item gob-button gob-hover-white gob-display-right gob-barex" onclick="loadUserData()" href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" title="Game of Business and Sun Tzu Art of War Game">Level
+							<span id="level">0</span>
+						</a>
+					</div>
+
+					<div id='menu-accordion' class="gob-card-2 gob-light-grey gob-center" style="display:none;">
+						<a title="Close Menu" href="javascript:void(0)" onclick="gob_close('menu-accordion')" class="gob-button gob-xlarge gob-right">&times;</a><br/>
+						<div class="gob-container" style="padding-top:0;padding-bottom:32px;">
+							<a href="https://www.gameofbusiness.org/book-pdf.php" class="gob-button gob-block gob-large gob-wide" title="Sun Tzu Art of War Business Strategy PDF">Buy E-Book</a>
+							<a href="https://www.gameofbusiness.org/the-art-of-war/summary.html" class="gob-button gob-block gob-large gob-wide" title="Game of Business and the Art of War Summary">See Summary</a>
+							<a href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" class="gob-button gob-block gob-large gob-wide" title="Game of Business and Sun Tzu Art of War Game">Play Game</a>
+							<a href="https://www.gameofbusiness.org/the-art-of-war/pdf.html" class="gob-button gob-block gob-large gob-wide" title="The Art of War PDF"><em>The Art of War</em> PDF</a>
+						</div>
+					</div>
+					<!-- End Header -->
+				</div>
+				
+				<!-- main banner -->
+				<section class="gob-row">
+				
+				
+				
+					<div style="position:relative;text-align:center;color:white;" class="mainbanner-figure image-container">
+						
+						<div style="left:0;right:0;">
+
+							<picture>
+								<!-- <img style="width:100%;height:auto;object-fit:cover;object-position:var(--focal-point-x) var(--focal-point-y);" class="mainbanner-image" title="Art of War Banner" alt="Art of War Banner" src="https://www.gameofbusiness.org/images/sun-tzu-standing-statue-top.jpeg"/> -->
+								<img style="width:auto;min-width:100%;min-height:100%;object-fit:cover;object-position:var(--focal-point-x) var(--focal-point-y);" class="mainbanner-image" title="Art of War Banner" alt="Art of War Banner" src="https://www.gameofbusiness.org/images/sun-tzu-standing-statue-top.jpeg"/>
+							</picture>
+
+							<div style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);z-index:1;">
+								<h1 style="font-weight:600;font-size:5vw;letter-spacing:-.06em;color:#fff;text-transform:uppercase;">Game of Business</h1>
+							</div>
+							
+
+							<!-- <div style="position:absolute;top:50%;z-index:1;width:100%;padding:0 8vw 0 2vw;margin:0;border:0;vertical-align:baseline;" class="centered title-inner">
+								
+								<h1 style="font-weight:600;font-size:10vw;letter-spacing:-.06em;color:#fff;text-transform:uppercase;margin:0;padding:0;border:0;vertical-align:baseline;" class="title">Game of Business</h1>
+							
+							</div> -->
+
+						</div>
+
+					</div>
+					
+					
+					
+				</section>
+
+				<!--section must adapt for all screen sizes between 1,2,3 cols-->
+
+				<!-- <section class="gob-row" >
+
+					<div style="display:block;" class="gob-margin-bottom gob-padding gob-center">
+						<figure>
+							<img src="https://www.gameofbusiness.org/images/GB-cover.gif" alt="Game of Business Book Cover" height="432px" width="288px" />
+						</figure>
+					</div>
+
+					<div style="display:block;" class="gob-margin-bottom gob-padding gob-center">
+						<figure>
+							<img src="https://www.gameofbusiness.org/images/pages/gb-page5.jpg" alt="Game of Business Page" height="432px" width="288px" />
+						</figure>
+					</div>
+
+					<div style="display:block;" class="gob-margin-bottom gob-padding gob-center"> -->
+						
+						<!--Automate your strategy-->
+						<!-- <header class="gob-center gob-home-header">
+							<h1 id="home-headline" class="gob-headline"><strong>Game of Business</strong></h1> -->
+							<!--<h1 id="home-headline-small" class="gob-headline"><strong>Sun Tzu <br/>and the <br/>Art of Business</strong></h1>-->
+							
+							<!-- <h2 class="gob-sub-headline">Sun Tzu Art of War Business Strategy</h2> 
+						</header> -->
+					
+						<!-- learn more and buy links -->
+						<!-- <div class="inner-links" style="display:inline-block;">
+							<span style="padding-right:35px;"><a class="gob-buy-link" href="https://www.gameofbusiness.org/book-pdf.php" title="Game of Business Buy E-Book">Buy</a></span>
+							<a class="gob-learn-link" href="https://www.gameofbusiness.org/game-of-business.html" title="Game of Business Learn More">Learn More ></a> 
+						</div>
+					
+					</div>
+
+				</section> -->
+				
+				<section class="gob-row" style="margin:0;border-bottom:12px solid #fff;text-align:center;">
+			
+					<a id="overlay-link" style="text-decoration:none;position:absolute;left:0;top:0;bottom:0;right:0;" href="https://www.gameofbusiness.org/book-pdf.php" title="Game of Business Buy E-Book"></a>
+
+					<div class="inner-links-container" style="padding:47px 0 0 0;pointer-events:none;position:relative;z-index:1;">
+					
+						<div style="display:inline-block;" class="gob-margin-bottom gob-padding gob-center">
+							<figure>
+								<img src="https://www.gameofbusiness.org/images/GB-cover.gif" alt="Game of Business Book Cover" height="432px" width="288px" />
+							</figure>
+						</div>
+						
+						<div style="display:inline-block;" class="gob-margin-bottom gob-padding gob-center">
+							<figure>
+								<img src="https://www.gameofbusiness.org/images/pages/gb-page5.jpg" alt="Game of Business Page" height="432px" width="288px" />
+							</figure>
+						</div>
+					
+						<div style="display:inline-block;vertical-align:top;" class="gob-margin-bottom gob-padding gob-center">
+						
+							<header class="gob-center gob-home-header">
+								<h1 id="home-headline" class="gob-headline"><strong>Game of Business</strong></h1>
+								<!--<h1 id="home-headline-small" class="gob-headline"><strong>Sun Tzu <br/>and the <br/>Art of Business</strong></h1>-->
+								<h2 class="gob-sub-headline">Sun Tzu Art of War Business Strategy</h2> <!--Automate your strategy-->
+							</header>
+						
+							<!-- learn more and buy links -->
+							<div class="inner-links" style="display:inline-block;">
+								<span style="padding-right:35px;"><a class="gob-buy-link" href="https://www.gameofbusiness.org/book-pdf.php" title="Game of Business Buy E-Book">Buy</a></span>
+								<a class="gob-learn-link" href="https://www.gameofbusiness.org/game-of-business.html" title="Game of Business Learn More">Learn More ></a> 
+							</div>
+						
+						</div>
+						
+						
+					</div>
+				
+				</section>
+				
+				<!-- summary section -->
+				<section class="gob-row section-summary" style="margin:0;border-bottom:12px solid #fff;background-color:#050505;color:#fbfbfd;">
+ 					
+ 					<!-- make max width so cols dont move too far from each other? important for large screens. -->
+ 					<div class="gob-section-content gob-banner-wrapper" style="margin-left:auto;margin-right:auto;max-width:980px;text-align:center;position:relative;"> <!--alt max-width:1440px;-->
+ 						
+ 						<a href="https://www.gameofbusiness.org/the-art-of-war/summary.html" style="position:absolute;top:0;left:0;right:0;bottom:0;text-decoration:none;" title="Sun Tzu Art of War Summary"></a>
+ 						
+ 						<div class="inner-links-container" style="pointer-events:none;position:relative;z-index:1;">
+ 						
+							<div class="gob-banner-container" style="margin:0;">
+							
+								<div id="summary-image-wrapper" class="gob-home-image-wrapper flex-image-wrapper">
+									<img src="https://www.gameofbusiness.org/images/art-of-war-summary.jpg" 
+										alt="Art of War Summary"
+										style="max-width:100%;height:auto;vertical-align:middle;height:90vh;"/>
+								</div>
+							
+								<div id="summary-copy-wrapper" class="gob-home-copy-wrapper flex-copy-wrapper" style="padding:2%;">
+									<h2 class="gob-headline gob-typography-headline" style="color:#fbfbfd;"><strong>Sun Tzu Art of War Summary</strong></h2>
+									<p class="gob-sub-headline gob-typography-product-lockup gob-promo-intro">Apply Strategies to Win Battles</p>
+									<div class="inner-links">
+										<a title="The Art of War Summary" class="gob-play-link" href="https://www.gameofbusiness.org/the-art-of-war/summary.html" style="align-items:center;display:inline-flex;justify-content:center;line-height:1.2;text-align:center;padding:4px 24px;white-space:nowrap;margin-top:7px;font-size:17px;letter-spacing:-.022em;text-decoration:none;pointer-events:all;">See Summary</a><!--Tesla link/button template-->
+									</div>
+								</div>
+								
+							</div>
+							
+ 						</div>
+ 					</div>
+ 				</section>
+				
+				<!-- combine templates to find ideal form -->
+ 				<!-- bkg clr offwhite, gutter white -->
+				<!-- span full width of screen -->
+				<!-- no padding above nor below image -->
+				<!-- make margin like prev section -->
+ 				<section class="gob-row section-game" style="margin:0;border-bottom:12px solid #fff;background-color:#050507;color:#fbfbfd;">
+ 					
+ 					<!-- make max width so cols dont move too far from each other? important for large screens. -->
+ 					<div class="gob-section-content gob-banner-wrapper" style="margin-left:auto;margin-right:auto;max-width:980px;text-align:center;position:relative;"> <!--alt max-width:1440px;-->
+ 						
+ 						<a href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" style="position:absolute;top:0;left:0;right:0;bottom:0;text-decoration:none;" title="Sun Tzu Art of War Game for Business Strategy"></a>
+ 						
+ 						<div class="inner-links-container" style="pointer-events:none;position:relative;z-index:1;">
+ 						
+							<div class="gob-banner-container" style="margin:0;">
+								
+								<div id="game-copy-wrapper" class="gob-home-copy-wrapper flex-copy-wrapper" style="padding:2%;">
+									<h2 class="gob-headline gob-typography-headline" style="color:#fbfbfd;"><strong>Sun Tzu Art of War Game for Business Strategy</strong></h2>
+									<p class="gob-sub-headline gob-typography-product-lockup gob-promo-intro">Play Game of Business to Determine the Likelihood of Your Company's Success</p>
+									<div class="inner-links">
+										<a title="Sun Tzu Art of War Game for Business Strategy" class="gob-play-link" href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" style="align-items:center;display:inline-flex;justify-content:center;line-height:1.2;text-align:center;padding:4px 24px;white-space:nowrap;margin-top:7px;font-size:17px;letter-spacing:-.022em;text-decoration:none;pointer-events:all;">Play Game</a><!--Tesla link/button template-->
+									</div>
+								</div>
+								
+								<div id="game-image-wrapper" class="gob-home-image-wrapper flex-image-wrapper">
+									<img src="https://www.gameofbusiness.org/images/sun-tzu-statues.jpg" 
+										alt="Play Game of Business"
+										style="max-width:100%;height:auto;vertical-align:middle;max-height:90vh;"/>
+								</div>
+								
+							</div>
+							
+ 						</div>
+ 					</div>
+ 				</section>
+				
+				<!-- custom banner test
+<section>
+					<div class="gob-col l6 m6 s12" style="text-align:center;">
+						<h2>Sun Tzu Art of War Game for Business Strategy</h2>
+						<p>Play Game of Business to Determine the Likelihood of Your Company's Success</p>
+					</div>
+					<div class="gob-col l6 m6 s12">
+						<img src="https://www.gameofbusiness.org/images/sun-tzu-statues.jpg" alt="Play Game of Business" width="100%" style="max-height:100vh;"/>
+					</div>
+				</section>
+ -->
+ 
+ 				<!--Apple Template Banner 1-->
+ 				<!-- 
+<section class="section-game" style="margin-top: 30px;">
+ 					<div class="gob-banner-wrapper" style="margin-left:auto;margin-right:auto;max-width:1440px;text-align:center;overflow:hidden;">
+ 						<div class="gob-banner-container" style="overflow:hidden;position:relative;display:flex;flex-direction:row;background-color:#f2f2f2;margin-left:2.08333%;margin-right:2.08333%;justify-content: space-between;">
+ 							<div class="flex-image-wrapper" style="min-height:434px;margin:0;z-index:1;flex-basis:50%;max-width:50%;order:1;">
+ 								<div class="gob-image-wrapper" style="position:relative;height:100%;">
+ 									<figure class="gob-banner-wrapper gob-figure" style="max-width:100%;height:auto;background-repeat:no-repeat;position:absolute;bottom:0;left:0;"><img src="https://www.gameofbusiness.org/images/sun-tzu-statues.jpg" alt="Play Game of Business"/></figure>
+ 								</div>
+ 							</div>
+ 							<div class="flex-copy-wrapper" style="width:46%;margin-bottom:0;padding-left:0;padding-right:0;margin-left:1.04167%;margin-right:2.08333%;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;order:0;">
+ 								<div class="gob-promo-copy-container" style="display:flex;flex-direction:column;justify-content:center;align-items:center;margin-left:auto;margin-right:auto;flex-basis:100%;max-width:100%">
+ 									<h2 class="gob-typography-headline" style="font-size:48px;line-height:1.08349;font-weight:600;letter-spacing:-.003em;margin:0;padding:0;">Sun Tzu Art of War Game for Business Strategy</h2>
+ 									<p class="gob-typography-product-lockup gob-promo-intro" style="margin-top:20px;font-size:17px;line-height:1.47059;letter-spacing:-.022em;margin:0;padding:0;">Play Game of Business to Determine the Likelihood of Your Company's Success</p>
+ 									<a class="gob-play-link" href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" style="align-items:center;display:inline-flex;justify-content:center;line-height:1.2;text-align:center;padding:4px 24px;white-space:nowrap;margin-top:7px;font-size:17px;letter-spacing:-.022em;text-decoration:none;">Play Game</a><!~~Tesla link/button template~~>
+ 								</div>
+ 							</div>
+ 						</div>
+ 					</div>
+ 				</section>
+ -->
+ 				
+ 				<!--Apple Template Hero 1-->
+ 				<!-- 
+<section class="section-game gob-hero-section" style="padding-top:68px;padding-bottom:66px;position:relative;margin-bottom:13px;background-color:#fff;overflow:hidden;">
+ 					<div class="section-content" style="margin-left:auto;margin-right:auto;width:980px;">
+ 						<a href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:1;text-decoration:none;"></a>
+ 						<div style="position:relative;display:flex;flex-wrap:wrap;flex-direction:row;width:100%;">
+ 							<div style="display:flex;flex-direction:column;justify-content:center;flex-basis:50%;max-width:50%;margin:0;padding:0;min-width:0px;">
+ 								<div style="margin-top:40px;z-index:2;text-align:center;">
+ 									<h2 class="gob-typography-headline" style="font-size:48px;line-height:1.08349;font-weight:600;letter-spacing:-.003em;margin:0;padding:0;">Sun Tzu Art of War Game for Business Strategy</h2>
+ 									<p class="gob-typography-product-lockup gob-promo-intro" style="margin-top:20px;font-size:17px;line-height:1.47059;letter-spacing:-.022em;margin:0;padding:0;">Play Game of Business to Determine the Likelihood of Your Company's Success</p>
+ 									<a class="gob-play-link" href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" style="align-items:center;display:inline-flex;justify-content:center;line-height:1.2;text-align:center;padding:4px 24px;white-space:nowrap;margin-top:7px;font-size:17px;letter-spacing:-.022em;text-decoration:none;">Play Game</a><!~~Tesla link/button template~~>
+ 								</div>
+ 							</div>
+ 							<div style="flex-basis:50%;max-width:50%;margin:0;padding:0;min-width:0px;">
+ 								<figure class="gob-figure" style="max-width:100%;background-repeat:no-repeat;position:relative;left:50%;margin-left:-240.5px;"><img src="https://www.gameofbusiness.org/images/sun-tzu-statues.jpg" alt="Play Game of Business"/></figure>
+ 							</div>
+ 						</div>
+ 					</div>
+ 				</section>
+ -->
+ 				
+ 				
+
+				<section class="gob-row gob-padding">
+				
+					<h2><strong>Use the Strategies in <em>the Art of War</em> to Reach Level 100 in <a href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" title="Sun Tzu Art of War Business Strategy Game">the Game of Business</a></strong></h2>
+					<div class="gob-section2 gob-margin-bottom">
+
+						<div class="gob-col s12 m12 ml6 l6" style="padding:3%">
+							<p class="gob-nowrap">Step 1: <a href="https://www.gameofbusiness.org/book-pdf.php" class="gob-button gob-dark-grey gob-hover-go-green" style="border-radius:10px" title="Sun Tzu Art of War Business Strategy PDF">Buy E-Book</a></h4>
+							<p class="gob-nowrap">Step 2: <a href="https://www.gameofbusiness.org/the-art-of-war/summary.html" class="gob-button gob-dark-grey" style="border-radius:10px" title="The Art of War Summary">See Summary</a></h4>
+							<p class="gob-nowrap">Step 3: <a href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" class="gob-button gob-dark-grey" style="border-radius:10px" title="Sun Tzu Art of War Game for Business Strategy">Play Game</a></h4>
+						</div>
+
+						<div class="gob-col s12 m12 ml6 l6" style="padding:3%">
+							<div class="gob-light-grey gob-card-2" style="padding:16px;border-radius:10px">
+								<h3>Example Strategy: Win the battle before it is fought. </h3>
+								<div class="gob-sample gob-border-red gob-xlarge" style="border-radius:10px">
+									<q>By means of the <a href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" title="Sun Tzu Art of War Game for Business Strategy">Seven Considerations</a> I can forecast victory or defeat.</q>
+								</div>
+								<a href="https://www.gameofbusiness.org/the-art-of-war/summary.html#gb-aw-quotes" class="gob-button gob-theme gob-hover-red gob-hover-shadow" style="border-radius:10px" title="Game of Business Quotes">See More <span class="gob-nowrap">Strategies ></span></a>
+							</div>
+						</div>
+
+					</div>
+				
+				</section>
+
+			</article>
+
+			<div id="contact-modal"></div>
+
+		</div> <!--end main-->
+
+		<div id="footer"></div>
+
+		<script src="https://www.gameofbusiness.org/scripts/gb-sections.js"></script>
+		<script src="https://www.gameofbusiness.org/scripts/gb-display.js"></script>
+
+	</body>
+</html>

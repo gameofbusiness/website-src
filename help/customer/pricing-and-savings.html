@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--Define charset.-->
+ 		<meta charset="utf-8"/>
+
+ 		<!--Provide a HTTP header for the info/value of the content attribute.-->
+ 		<meta http-equiv="content-type" content="text/html"/>
+
+ 		<!--
+			Give browser instructions on how to control the page's dimensions and scaling.
+			Set the width of the page to follow the screen-width of the device.
+			Set the initial zoom level when the page is first loaded by the browser.
+		-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<!--Define keywords for search engines.-->
+		<meta name="Keywords" content="Game of Business, Sun Tzu, Art of Business, Art of War in business, Sun Tzu, leadership training, business strategy, team training, strategy game, business book, strategize, military strategy, leadership book, Sun Tsu, Sun Tzu Art of War, business, consulting, business plans, finance, investing, venture capital, leadership, management, learning, training, strategy, game, ultimate guide"/>
+
+		<!--Define a description of the web page.-->
+		<meta name="description" content="GAME OF BUSINESS — Sun Tzu and the Art of Business — Game of Business can guide your business strategy, because it the most precise transformation of the Art of War for business. "/>
+
+		<!--Define the author of the web page.-->
+		<meta name="author" content="Sun Tzu"/>
+
+		<!-- Facebook Open Graph allows defining properties to create rich text: http://ogp.me/-->
+		<meta property="og:site_name" content="Game of Business"/> <!-- Show site name as root of navigation path -->
+		<meta property="og:title" content="Game of Business | Sun Tzu and the Art of Business"/>
+		<meta property="og:description" content="GAME OF BUSINESS — Sun Tzu and the Art of Business — Game of Business can guide your business strategy, because it the most precise transformation of the Art of War for business. "/>
+		<meta property="og:image" content="https://www.gameofbusiness.org/images/GB-logo.jpg"/>
+
+		<title>Game of Business | Sun Tzu and the Art of Business</title>
+
+		<link rel="stylesheet" href="https://www.gameofbusiness.org/css/gob.css"/>
+
+		<link rel="canonical" href="https://www.gameofbusiness.org/"/>
+
+		<!--<link rel="stylesheet" href="<?php bloginfo(stylesheet_url); echo '?' . filemtime( get_stylesheet_directory() . '/gob.css'); ?>" type="text/css" media="screen, projection" />-->
+
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+		<script src="https://www.gameofbusiness.org/scripts/jquery-2.1.4.min.js"></script>
+		<script src="https://www.gameofbusiness.org/scripts/bootstrap.min.js"></script>
+
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"url": "https://www.gameofbusiness.org/",
+			"name": "Game of Business",
+			"description": "If your goal is to start an excellent business or significantly increase earnings, Game of Business can help you. Game of Business uses the strategic principles from Sun Tzu Art of War to recommend a plan of action for your company. ",
+			"logo": "https://gameofbusiness.org/images/GB-logo.jpg",
+			"contactPoint":
+			{
+				"@type": "ContactPoint",
+				"telephone": "+1-516-967-6092",
+				"email": "support@gameofbusiness.org",
+				"contactType": "Customer Support",
+				"areaServed": "US",
+				"availableLanguage": "English"
+			}
+		}
+		</script>
+
+	</head>
+
+	<body>
+	
+		<!-- Start Header -->
+		<div class="gob-bar gob-theme gob-card-2 gob-wide gob-topnav" style="height:44px;">
+			<a id="tabbtn-menu" title="Open|Close Menu" class="gob-bar-item gob-button gob-hover-white gob-fa gob-fa-menu" href="javascript:void(0)" onclick="gob_open_menu('menu-accordion', this)" style="display:inline-block;">
+				<!-- <i class="fa">&#xf0c9;</i> --> <!--Instead of class='fas fa-bars', use Unicode for "font awesome" bars when menu collapses because window shrunk: &#xf0c9;-->
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</a>
+			<a id="tabbtn-logo" href='https://www.gameofbusiness.org' class="gob-bar-item gob-button gob-hover-white"><strong>Game of Business</strong></a>
+			<a id="tabbtn-buy" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/book-pdf.php" title="Sun Tzu Art of War Business Strategy PDF">Buy E-Book</a>
+			<a id="tabbtn-summary" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/the-art-of-war/summary.html" title="Game of Business and the Art of War Summary">See Summary</a>
+			<a id="tabbtn-game" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" title="Game of Business and Sun Tzu Art of War Game">Play Game</a>
+			<a id="tabbtn-pdf" class="gob-bar-item gob-button gob-hover-white" href="https://www.gameofbusiness.org/the-art-of-war/pdf.html" title="The Art of War PDF"><em>The Art of War</em> PDF</a>
+			<a id="tabbtn-level" class="gob-bar-item gob-button gob-hover-white gob-display-right gob-barex" onclick="loadUserData()" href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" title="Game of Business and Sun Tzu Art of War Game">Level
+				<span id="level">0</span>
+			</a>
+		</div>
+
+		<div id='menu-accordion' class="gob-card-2 gob-light-grey gob-center" style="display:none;">
+			<a title="Close Menu" href="javascript:void(0)" onclick="gob_close('menu-accordion')" class="gob-button gob-xlarge gob-right">&times;</a><br/>
+			<div class="gob-container" style="padding-top:0;padding-bottom:32px;">
+				<a href="https://www.gameofbusiness.org/book-pdf.php" class="gob-button gob-block gob-large gob-wide" title="Sun Tzu Art of War Business Strategy PDF">Buy E-Book</a>
+				<a href="https://www.gameofbusiness.org/the-art-of-war/summary.html" class="gob-button gob-block gob-large gob-wide" title="Game of Business and the Art of War Summary">See Summary</a>
+				<a href="https://www.gameofbusiness.org/sun-tzu/art-of-war/game.html" class="gob-button gob-block gob-large gob-wide" title="Game of Business and Sun Tzu Art of War Game">Play Game</a>
+				<a href="https://www.gameofbusiness.org/the-art-of-war/pdf.html" class="gob-button gob-block gob-large gob-wide" title="The Art of War PDF"><em>The Art of War</em> PDF</a>
+			</div>
+		</div>
+		<!-- End Header -->
+
+		<div class="gob-main gob-main-content" style="min-height: calc(100vh - 395px);">
+
+			<article>
+
+				<header class="gob-center" style="margin-top:20px;">
+					<h1 id="savings-headline" class="gob-help-headline" style="font-size:28px;text-align:left;padding:0 0 8px 0;margin:0 0 18px 0;"><strong>Strike-Through Pricing and Savings</strong></h1>
+					<h2 class="gob-help-sub-headline" style="font-size:18px;color:#555;border-bottom:1px solid #ddd;text-align:left;padding:0 0 18px 0;margin:0 0 18px 0;">Items on Game of Business may display a List Price or other strike-through pricing or saving information on the product detail page. </h2> <!--Automate your strategy-->
+				</header>
+
+				<section>
+				
+					<div class="gob-help-text" style="margin:0 0 28px 0;font-size:16px;">This <strong>First-Time Visitor Discount</strong> applies to all first-time visitors of gameofbusiness.org. </div>
+						
+					<div class="gob-help-text" style="margin:0 0 28px 0;font-size:16px;">The <strong>List Price</strong> is the suggested retail price of a product as provided by the supplier. </div>
+					
+					<div class="gob-help-text" style="margin:0 0 28px 0;font-size:16px;">You may see additional strike-through pricing and savings information: Based on savings from the "List" price, items may also have a <strong>You Save</strong> dollar value and <strong>percentage-off display</strong>. </div>
+
+				</section>
+
+			</article>
+
+			<div id="contact-modal"></div>
+
+		</div> <!--end main-->
+
+		<div id="footer"></div>
+
+		<script src="https://www.gameofbusiness.org/scripts/gb-sections.js"></script>
+		<script src="https://www.gameofbusiness.org/scripts/gb-display.js"></script>
+
+	</body>
+</html>
